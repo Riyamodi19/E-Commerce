@@ -8,5 +8,19 @@
 </head>
 <body>
 <h2>Signup</h2>
+<form action="saveuser" method="post">
+		FirstName: <input type="text" name="firstName"  /><br><br> 
+		Lastname: <input type="text"  name="lastname"/><br><br>
+		Email: <input type="text" name="email"/><br><br> 
+		Password: <input type="password" name="password"/><br><br> 
+		Confirm Password:<input type="password" name="password"/><br><br>
+		Gender:<label>Male</label><input type="radio" name="radio" value="male">
+		       <label>Female</label><input type="radio" name="radio" value="female">
+		       <label>Other</label><input type="radio" name="radio" value="other"><br><br>
+		
+		<input type="submit" value="Signup"/>
+</form>
+<br><br> 
+	<a href="login">Login</a>
 </body>
 </html>

@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>ForgetPassword</title>
 </head>
 <body>
-<h2>Login</h2>
-<form action="user" method="post"> 
+<h2>ForgetPassword</h2>
+<form>
 Email: <input type="text" name="email"><br><br>
 Password:<input type="password" name="password"><br><br>
-         <a href="forgetpassword">ForgetPassword</a><br><br>
-         <input type="submit" value="login"/><br><br>
-	<a href="signup">Signup</a>
+         <input type="submit" value="submit"/><br><br>
+	<a href="login">Login</a>
 </form>
 </body>
 </html>
