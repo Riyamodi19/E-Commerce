@@ -23,9 +23,19 @@ public class SessionController {
     public String user() {
     	   return "Signup";
     }
-    
+    //open forgetpassword.jsp
     @GetMapping("forgetpassword")
-    public String ForgetPassword() {
+    public String forgetPassword() {
     	return "ForgetPassword";
+    }
+    //submit on forgetpassword
+    @PostMapping("sendOtp")
+    public String sendOtp() {
+    	return "ChangePassword";
+    }
+    //password update and go to login
+    @PostMapping("updatePassword")
+    public String updatePassword() {
+    	return "Login";
     }
 }

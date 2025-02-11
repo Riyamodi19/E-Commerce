@@ -8,11 +8,10 @@
 </head>
 <body>
 <h2>ForgetPassword</h2>
-<form>
+<form action="sendOtp" method="post">
 Email: <input type="text" name="email"><br><br>
-Password:<input type="password" name="password"><br><br>
-         <input type="submit" value="submit"/><br><br>
-	<a href="login">Login</a>
+         <input type="submit" value="Help Me"/><br><br>
 </form>
+<a href="login">Go to Login</a>
 </body>
 </html>

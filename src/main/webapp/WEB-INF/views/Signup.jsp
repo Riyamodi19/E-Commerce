@@ -17,7 +17,7 @@
 		Gender:<label>Male</label><input type="radio" name="radio" value="male">
 		       <label>Female</label><input type="radio" name="radio" value="female">
 		       <label>Other</label><input type="radio" name="radio" value="other"><br><br>
-		
+		Contact number: <input type="tel" name="phone"><br><br>
 		<input type="submit" value="Signup"/>
 </form>
 <br><br> 
