@@ -4,24 +4,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.UserEntity;
+
 @Controller
-public class SessionController {
+public class SessionController{
 	@GetMapping(value = {"/","signup"})//url
 	public String Signup() {
-		return "Signup";
+		return "Signup";//jsp
 	}
 	
     @GetMapping("login")//url
     public String Login() {
     	return "Login";//jsp name
     }
+   
     @PostMapping("saveuser")
-    public String saveUser() {
-    	   return "Login";//jsp
+    public String saveUser(UserEntity userEntity) {
+    	//read
+    	System.out.println(userEntity.getFirstName());
+    	System.out.println(userEntity.getLastName());
+    	System.out.println(userEntity.getEmail());
+    	System.out.println(userEntity.getPassword());
+    	System.out.println(userEntity.getConfirmPassword());
+    	System.out.println(userEntity.getGender());
+    	System.out.println(userEntity.getContactNum());
+    	 return "Login";
     }
-    @PostMapping("user")
-    public String user() {
-    	   return "Signup";
+    @PostMapping("home")
+    public String home(UserEntity userEntity) {
+    	System.out.println(userEntity.getEmail());
+    	System.out.println(userEntity.getPassword());
+    	   return "Home";
     }
     //open forgetpassword.jsp
     @GetMapping("forgetpassword")

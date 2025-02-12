@@ -1,6 +1,5 @@
 package com.grownited.entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,13 +10,14 @@ import jakarta.persistence.Table;
 @Table(name="users")//table name set
 public class UserEntity {
 //UUID , Integer , Long , int , long userId;
-	@Id
+	@Id //primary key allowed
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private	Integer userId;
 private	String firstName;
 private String lastName;
 private	String email;
 private	String password;
+private String confirmPassword;
 private	String contactNum;
 private	String city;
 private	String bornYear;
@@ -82,6 +82,12 @@ public String getRole() {
 }
 public void setRole(String role) {
 	this.role = role;
+}
+public String getConfirmPassword() {
+	return confirmPassword;
+}
+public void setConfirmPassword(String confirmPassword) {
+	this.confirmPassword = confirmPassword;
 }
 
 
