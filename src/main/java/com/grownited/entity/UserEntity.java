@@ -10,7 +10,9 @@ import jakarta.persistence.Table;
 @Table(name="users")//table name set
 public class UserEntity {
 //UUID , Integer , Long , int , long userId;
+	
 	@Id //primary key allowed
+	
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private	Integer userId;
 private	String firstName;
