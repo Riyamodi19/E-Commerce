@@ -11,7 +11,7 @@
  <form action="savestate" method="post">
    <!-- States of India -->
 State Name:<input type="text" name="stateName"><br><br>
- <input type="submit" value="Submit"/><br><br>
+ <input type="submit" value="Save State"/><br><br>
  </form>
 </body>
 </html>

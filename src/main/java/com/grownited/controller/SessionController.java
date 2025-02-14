@@ -11,7 +11,7 @@ import com.grownited.repository.UserRepository;
 @Controller
 public class SessionController{
 	
-    @Autowired
+    @Autowired //for creating object
     UserRepository repoUser;
     
 	@GetMapping(value = {"/","signup"})//url
