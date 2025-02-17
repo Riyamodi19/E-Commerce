@@ -26,6 +26,7 @@ public class SessionController{
    
     @PostMapping("saveuser")
     public String saveUser(UserEntity userEntity) {
+    	userEntity.setRole("USER");
     	//read
     	System.out.println(userEntity.getFirstName());
     	System.out.println(userEntity.getLastName());

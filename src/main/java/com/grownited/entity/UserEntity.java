@@ -1,5 +1,6 @@
 package com.grownited.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,12 +18,12 @@ public class UserEntity {
 private	Integer userId;
 private	String firstName;
 private String lastName;
+@Column(unique = true)
 private	String email;
 private	String password;
 private String confirmPassword;
 private	String contactNum;
 private	String city;
-private	String bornYear;
 private	String gender;
 private	String role;//member,security,chairman,admin
 public Integer getUserId() {
@@ -66,12 +67,6 @@ public String getCity() {
 }
 public void setCity(String city) {
 	this.city = city;
-}
-public String getBornYear() {
-	return bornYear;
-}
-public void setBornYear(String bornYear) {
-	this.bornYear = bornYear;
 }
 public String getGender() {
 	return gender;
