@@ -25,7 +25,7 @@ public class MemberController {
 	@PostMapping("savemember")
 	public String saveMember(MemberEntity entityMember) {
 		repositoryMember.save(entityMember);
-		return "NewMember";
+		return "redirect:/listmember";
 	}
 
 	@GetMapping("listmember")

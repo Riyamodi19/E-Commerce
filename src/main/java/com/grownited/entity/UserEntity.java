@@ -1,5 +1,7 @@
 package com.grownited.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,14 +25,28 @@ private	String email;
 private	String password;
 private String confirmPassword;
 private	String contactNum;
-private	String city;
 private	String gender;
 private	String role;//member,security,chairman,admin
+private Date createdAt;
+private Integer status; //active or disabled
+
+public Integer getStatus() {
+	return status;
+}
+public void setStatus(Integer status) {
+	this.status = status;
+}
 public Integer getUserId() {
 	return userId;
 }
 public void setUserId(Integer userId) {
 	this.userId = userId;
+}
+public Date getCreatedAt() {
+	return createdAt;
+}
+public void setCreatedAt(Date createdAt) {
+	this.createdAt = createdAt;
 }
 public String getFirstName() {
 	return firstName;
@@ -61,12 +77,6 @@ public String getContactNum() {
 }
 public void setContactNum(String contactNum) {
 	this.contactNum = contactNum;
-}
-public String getCity() {
-	return city;
-}
-public void setCity(String city) {
-	this.city = city;
 }
 public String getGender() {
 	return gender;
