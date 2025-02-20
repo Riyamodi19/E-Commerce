@@ -12,14 +12,14 @@ import com.grownited.repository.CityRepository;
 public class CityController {
 	@Autowired
 	CityRepository repoCity;
-@GetMapping("city")
-public String city() {
-	return "City";
+@GetMapping("newcity")
+public String newCity() {
+	return "NewCity";
 }
 @PostMapping("savecity")
 public String saveCity(CityEntity cityEntity) {
 	System.out.println(cityEntity.getCityName());
 	repoCity.save(cityEntity);
-	return "City";
+	return "NewCity";
 }
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>City</title>
+<title>New City</title>
 </head>
 <body>
 <h2>New City</h2>
