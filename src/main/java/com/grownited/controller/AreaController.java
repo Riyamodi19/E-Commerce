@@ -28,7 +28,7 @@ public class AreaController {
 		repoArea.save(areaEntity);
 		return "redirect:/listarea";// jsp name
 	}
-	
+	//list area
 	@GetMapping("listarea")
 	public String listArea(Model model) {
 		List<AreaEntity> areaList = repoArea.findAll();// select * from members; //500 -> MemberEntity

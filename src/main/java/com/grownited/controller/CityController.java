@@ -25,6 +25,7 @@ public String saveCity(CityEntity cityEntity) {
 	repoCity.save(cityEntity);
 	return "redirect:/listcity";
 }
+//list city
 @GetMapping("listcity")
 public String listCity(Model model) {
 	List<CityEntity> cityList = repoCity.findAll();// select * from members; //500 -> MemberEntity

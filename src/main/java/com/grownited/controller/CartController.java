@@ -26,6 +26,7 @@ public String saveCart(CartEntity cartEntity) {
 	repoCart.save(cartEntity);
 	return "redirect:/listcart";
 }
+//list cart
 @GetMapping("listcart")
 public String listCart(Model model) {
 	List<CartEntity> cartList = repoCart.findAll();// select * from members; //500 -> MemberEntity

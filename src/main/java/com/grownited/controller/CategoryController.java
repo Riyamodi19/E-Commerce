@@ -26,6 +26,7 @@ public class CategoryController {
 	   repoCategory.save(categoryEntity);
 	   return "redirect:/listcategory";
    }
+   //list category
    @GetMapping("listcategory")
 	public String listCategory(Model model) {
 		List<CategoryEntity> categoryList = repoCategory.findAll();// select * from members; //500 -> MemberEntity

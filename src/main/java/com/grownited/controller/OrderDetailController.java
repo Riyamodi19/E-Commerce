@@ -28,6 +28,7 @@ public class OrderDetailController {
 	  repoOrderDetail.save(orderDetailEntity);
 	  return "redirect:/listorderdetail";
   }
+  //list oder detail
   @GetMapping("listorderdetail")
   public String listOrderDetail(Model model) {
   	List<OrderDetailEntity> orderDetailList = repoOrderDetail.findAll();// select * from members; //500 -> MemberEntity

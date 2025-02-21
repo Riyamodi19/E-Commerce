@@ -26,6 +26,7 @@ public class OrdersController {
 		repoOrders.save(ordersEntity);
 		return "redirect:/listorders";
 	}
+	//list orders
 	@GetMapping("listorders")
 	  public String listOrders(Model model) {
 	  	List<OrdersEntity> ordersList = repoOrders.findAll();// select * from members; //500 -> MemberEntity
