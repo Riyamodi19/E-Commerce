@@ -1,13 +1,11 @@
 package com.grownited.controller;
 
-
-
-
-import java.util.*;
-
+import java.util.Date;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -28,7 +26,7 @@ public class SessionController{
 
     
 	@GetMapping(value = {"/","signup"})//url
-	public String Signup() {
+	public String signup() {
 		return "Signup";//jsp
 	}
 	
@@ -64,10 +62,7 @@ public class SessionController{
     	 return "Login";
     }
     
-    @PostMapping("home")
-    public String home(UserEntity userEntity) {
-    	   return "Home";
-    }
+    
     //open forgetpassword.jsp
     @GetMapping("forgetpassword")
     public String forgetPassword() {
@@ -83,4 +78,24 @@ public class SessionController{
     public String updatePassword() {
     	return "Login";
     }
+    @PostMapping("authenticate")
+    public String authenthicate(String email, String password,Model model) {
+    	System.out.println(email);
+		System.out.println(password);
+
+		// users -> email,password
+		Optional<UserEntity> op = repoUser.findByEmail(email);
+		// select * from users where email = :email and password = :password
+		if (op.isPresent()) {
+			// true
+			// email
+			UserEntity dbUser = op.get();
+			if (encoder.matches(password, dbUser.getPassword())) {
+				return "redirect:/home";
+			}
+		}
+		model.addAttribute("error","Invalid Credentials");
+		return "Login";
+	}
+    
 }

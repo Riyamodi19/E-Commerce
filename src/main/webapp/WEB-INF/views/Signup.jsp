@@ -10,7 +10,7 @@
 <h2>Signup</h2>
 <form action="saveuser" method="post">
 		FirstName: <input type="text" name="firstName"  /><br><br> 
-		Lastname: <input type="text"  name="lastName"/><br><br>
+		LastName: <input type="text"  name="lastName"/><br><br>
 		Email: <input type="text" name="email"/><br><br> 
 		Password: <input type="password" name="password"/><br><br> 
 		Confirm Password:<input type="password" name="confirmPassword"/><br><br>
