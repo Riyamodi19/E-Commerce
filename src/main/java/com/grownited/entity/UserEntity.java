@@ -1,6 +1,9 @@
 package com.grownited.entity;
 
-import java.util.Date;
+
+
+import java.util.*;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,6 +45,7 @@ public Integer getUserId() {
 public void setUserId(Integer userId) {
 	this.userId = userId;
 }
+
 public Date getCreatedAt() {
 	return createdAt;
 }

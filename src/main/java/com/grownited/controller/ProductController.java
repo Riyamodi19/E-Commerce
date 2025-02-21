@@ -20,8 +20,6 @@ public class ProductController {
 	@PostMapping("saveproduct")
 	public String saveProduct(ProductEntity productEntity) {
 		System.out.println(productEntity.getProductName());
-		System.out.println(productEntity.getOfferPrice());
-		System.out.println(productEntity.getOfferPercentage());
 		System.out.println(productEntity.getProductDetail());
 		System.out.println(productEntity.getProductImageURL1());
 		System.out.println(productEntity.getProductImageURL2());

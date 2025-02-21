@@ -10,7 +10,7 @@
 <form action="savemember" method="post">
 	Member Name: <input type="text" name="memberName"/><br><br> 
 	Age : <input type="text" name="age"/><br><br> 
-	ProfilePhot : <input type="file" name="profilePhoto"/><br><br> 
+	ProfilePhoto : <input type="file" name="profilePhoto"/><br><br> 
 	
 	<input type="submit" value="Save Member"/>
 

@@ -1,7 +1,7 @@
 package com.grownited.entity;
 
-import java.math.BigDecimal;
-import java.util.Date;
+
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,13 +12,12 @@ import jakarta.persistence.Id;
 public class ProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private Integer productId;	
 	private String productName;	
 	private Integer categoryId;
 	private Integer subCategoryId;
-	private BigDecimal basePrice;
-	private BigDecimal offerPrice;	
+	private Integer basePrice;
+	private Integer offerPrice;	
 	private Double offerPercentage;	
 	private String productDetail;	
 	private String productImageURL1;	
@@ -50,17 +49,22 @@ public class ProductEntity {
 	public void setSubCategoryId(Integer subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
-	public BigDecimal getBasePrice() {
+	
+	
+	public Integer getBasePrice() {
 		return basePrice;
 	}
-	public void setBasePrice(BigDecimal basePrice) {
+	public void setBasePrice(Integer basePrice) {
 		this.basePrice = basePrice;
 	}
-	public BigDecimal getOfferPrice() {
+	public Integer getOfferPrice() {
 		return offerPrice;
 	}
-	public void setOfferePrice(BigDecimal offerPrice) {
+	public void setOfferPrice(Integer offerPrice) {
 		this.offerPrice = offerPrice;
+	}
+	public void setOfferPercentage(Double offerPercentage) {
+		this.offerPercentage = offerPercentage;
 	}
 	public Double getOfferPercentage() {
 		return offerPercentage;

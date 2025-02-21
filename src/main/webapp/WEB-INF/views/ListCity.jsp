@@ -5,21 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>List Member</title>
+<title>List City</title>
 </head>
 <body>
-<h2>List Member</h2>
-
-	<table border="1">
-      <c:forEach items="${memberList}" var="m">
-
+<h2>List City</h2>
+<table border="1">
+         <tr>
+          <th>City Name</th>
+          </tr>
+      <c:forEach items="${cityList}" var="m">
 			<tr>
-				<td>${m.memberName }</td>
-				<td>${m.age}</td>
-				<td>${m.profilePhoto }</td>
+				<td>${m.cityName}</td>
 			</tr>
 		</c:forEach>
 	</table>
-
 </body>
 </html>
