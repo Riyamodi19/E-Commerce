@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.Date;
+
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.Service.MailService;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class SessionController{
@@ -44,7 +47,7 @@ public class SessionController{
 		 //memory 
 		//bcrypt singleton -> single object -> autowired
 		
-    	userEntity.setRole("USER");
+    	userEntity.setRole("BUYER");
     	userEntity.setCreatedAt(new Date());
     	
     
@@ -79,7 +82,7 @@ public class SessionController{
     	return "Login";
     }
     @PostMapping("authenticate")
-    public String authenthicate(String email, String password,Model model) {
+    public String authenthicate(String email, String password,Model model,HttpSession session) { //sakira@yopmail.com
     	System.out.println(email);
 		System.out.println(password);
 
@@ -90,12 +93,32 @@ public class SessionController{
 			// true
 			// email
 			UserEntity dbUser = op.get();
-			if (encoder.matches(password, dbUser.getPassword())) {
-				return "redirect:/home";
+			
+			boolean ans = encoder.matches(password, dbUser.getPassword());
+			
+			if (ans == true) {
+				session.setAttribute("user", dbUser); // session -> user set
+				if (dbUser.getRole().equals("ADMIN")) {
+
+					return "redirect:/admindashboard";
+				} else if (dbUser.getRole().equals("BUYER")) {
+
+					return "redirect:/home";
+				} else {
+					model.addAttribute("error", "Please contact Admin with Error Code #0991");
+					return "Login";
+				}
+
 			}
 		}
 		model.addAttribute("error","Invalid Credentials");
 		return "Login";
 	}
+     @GetMapping("logout")
+	 public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/login";// login url
+	}
+
     
 }
