@@ -14,10 +14,10 @@
           <th>Review Text</th>
           <th>Rating</th>
           </tr>
-      <c:forEach items="${reviewsList}" var="m">
+      <c:forEach items="${reviewsList}" var="r">
 			<tr>
-				<td>${m.reviewText}</td>
-				<td>${m.rating}</td>
+				<td>${r.reviewText}</td>
+				<td>${r.rating}</td>
 			</tr>
 		</c:forEach>
 	</table>

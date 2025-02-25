@@ -1,4 +1,4 @@
-package com.grownited.controller;
+package com.grownited.controller.admin;
 
 import java.util.List;
 
