@@ -12,10 +12,12 @@
 <table border="1">
          <tr>
           <th>Total Amount</th>
+           <th>Action</th>
           </tr>
-      <c:forEach items="${ordersList}" var="m">
+      <c:forEach items="${ordersList}" var="o">
 			<tr>
-				<td>${m.totalAmount}</td>
+				<td>${o.totalAmount}</td>
+				<td><a href="vieworders?orderId=${o.orderId}">View</a> | <a href="deleteorders?orderId=${o.orderId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

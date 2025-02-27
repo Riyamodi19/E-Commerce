@@ -1,7 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,4 +41,29 @@ public class AreaController {
 		return "ListArea";
 	}
 
+   //view area
+
+	@GetMapping("viewarea")
+	public String viewArea(Integer areaId, Model model) {
+		// ?
+		System.out.println("id ===> " + areaId);
+		Optional<AreaEntity> op = repoArea.findById(areaId);
+		if (op.isEmpty()) {
+			// not found
+		} else {
+			// data found
+	        AreaEntity area = op.get();
+			// send data to jsp ->
+			model.addAttribute("area", area);
+
+		}
+
+		return "ViewArea";
+	}
+	//deletearea
+	@GetMapping("deletearea")
+	public String deleteArea(Integer areaId) {
+		repoArea.deleteById(areaId);//delete from members where memberID = :memberId
+		return "redirect:/listarea";
+	}
 }

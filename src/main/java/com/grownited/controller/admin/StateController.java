@@ -1,6 +1,7 @@
 package com.grownited.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,4 +43,29 @@ public String listState(Model model) {
 	
 	return "ListState";
 }
+//view state
+
+	@GetMapping("viewstate")
+	public String viewState(Integer stateId, Model model) {
+		// ?
+		System.out.println("id ===> " + stateId);
+		Optional<StateEntity> op = repoState.findById(stateId);
+		if (op.isEmpty()) {
+			// not found
+		} else {
+			// data found
+	        StateEntity state = op.get();
+			// send data to jsp ->
+			model.addAttribute("state", state);
+
+		}
+
+		return "ViewState";
+	}
+	//delete product
+	@GetMapping("deletestate")
+	public String deleteState(Integer stateId) {
+		repoState.deleteById(stateId);//delete from members where memberID = :memberId
+		return "redirect:/liststate";
+	}
 }

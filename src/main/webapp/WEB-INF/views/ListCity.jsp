@@ -12,10 +12,12 @@
 <table border="1">
          <tr>
           <th>City Name</th>
+          <th>Action</th>
           </tr>
-      <c:forEach items="${cityList}" var="m">
+      <c:forEach items="${cityList}" var="c">
 			<tr>
-				<td>${m.cityName}</td>
+				<td>${c.cityName}</td>
+				<td><a href="viewcity?cityId=${c.cityId}">View</a> | <a href="deletecity?cityId=${c.cityId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

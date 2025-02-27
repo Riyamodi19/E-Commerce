@@ -1,7 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +29,7 @@ public class ReviewsController {
     	repoReviews.save(reviewsEntity);
     	return "redirect:/listreviews";
     }
-    //list Review
+    //list Reviews
     @GetMapping("listreviews")
 	  public String listReviews(Model model) {
 	  	List<ReviewsEntity> reviewsList = repoReviews.findAll();// select * from members; //500 -> MemberEntity
@@ -41,4 +41,29 @@ public class ReviewsController {
 	  	
 	  	return "ListReviews";
 	  }
+  //view reviews
+
+  		@GetMapping("viewreviews")
+  		public String viewProduct(Integer reviewId, Model model) {
+  			// ?
+  			System.out.println("id ===> " + reviewId);
+  			Optional<ReviewsEntity> op = repoReviews.findById(reviewId);
+  			if (op.isEmpty()) {
+  				// not found
+  			} else {
+  				// data found
+  		        ReviewsEntity reviews = op.get();
+  				// send data to jsp ->
+  				model.addAttribute("reviews", reviews);
+
+  			}
+
+  			return "ViewReviews";
+  		}
+  		//delete product
+  		@GetMapping("deletereviews")
+  		public String deleteReviews(Integer reviewsId) {
+  			repoReviews.deleteById(reviewsId);//delete from members where memberID = :memberId
+  			return "redirect:/listreviews";
+  		}
 }

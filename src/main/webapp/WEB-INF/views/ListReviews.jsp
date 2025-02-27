@@ -13,11 +13,13 @@
          <tr>
           <th>Review Text</th>
           <th>Rating</th>
+          <th>Action</th>
           </tr>
       <c:forEach items="${reviewsList}" var="r">
 			<tr>
 				<td>${r.reviewText}</td>
 				<td>${r.rating}</td>
+				<td><a href="viewreviews?reviewId=${r.reviewId}">View</a> | <a href="deletereviews?reviewId=${r.reviewId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

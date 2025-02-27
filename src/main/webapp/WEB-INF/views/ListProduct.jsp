@@ -16,14 +16,16 @@
           <th>Product ImageURL1</th>
           <th>product ImageURL2</th>
           <th>product ImageURL3</th>
+          <th>Action</th>
           </tr>
-      <c:forEach items="${productList}" var="m">
+      <c:forEach items="${productList}" var="p">
 			<tr>
-				<td>${m.productName}</td>
-				<td>${m.productDetail}</td>
-				<td>${m.productImageURL1}</td>
-				<td>${m.productImageURL2}</td>
-				<td>${m.productImageURL3}</td>
+				<td>${p.productName}</td>
+				<td>${p.productDetail}</td>
+				<td>${p.productImageURL1}</td>
+				<td>${p.productImageURL2}</td>
+				<td>${p.productImageURL3}</td>
+				<td><a href="viewproduct?productId=${p.productId}">View</a> | <a href="deleteproduct?productId=${p.productId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

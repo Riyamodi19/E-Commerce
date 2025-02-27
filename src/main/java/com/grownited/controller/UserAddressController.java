@@ -1,7 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -43,4 +43,29 @@ public class UserAddressController {
 	  	
 	  	return "ListUserAddress";
 	  }
+	//view useraddress
+
+		@GetMapping("viewuseraddress")
+		public String viewUserAddress(Integer userAddressId, Model model) {
+			// ?
+			System.out.println("id ===> " + userAddressId);
+			Optional<UserAddressEntity> op = repoUserAddress.findById(userAddressId);
+			if (op.isEmpty()) {
+				// not found
+			} else {
+				// data found
+		        UserAddressEntity userAddress = op.get();
+				// send data to jsp ->
+				model.addAttribute("useraddress", userAddress);
+
+			}
+
+			return "ViewUserAddress";
+		}
+		//delete product
+		@GetMapping("deleteuseraddress")
+		public String deleteUserAddress(Integer userAddressId) {
+			repoUserAddress.deleteById(userAddressId);//delete from members where memberID = :memberId
+			return "redirect:/listuseraddress";
+		}
 }

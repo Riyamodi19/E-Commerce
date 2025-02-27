@@ -1,7 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +37,31 @@ public String listCart(Model model) {
 					//dataName , dataValue 
 	
 	return "ListCart";
+}
+//viewcart
+
+@GetMapping("viewcart")
+public String viewCart(Integer cartId, Model model) {
+	// ?
+	System.out.println("id ===> " + cartId);
+	Optional<CartEntity> op = repoCart.findById(cartId);
+	if (op.isEmpty()) {
+		// not found
+	} else {
+		// data found
+        CartEntity cart = op.get();
+		// send data to jsp ->
+		model.addAttribute("cart", cart);
+
+	}
+
+	return "ViewArea";
+}
+//deletecart
+@GetMapping("deletecart")
+public String deleteArea(Integer cartId) {
+	repoCart.deleteById(cartId);//delete from members where memberID = :memberId
+	return "redirect:/listcart";
 }
 
 }

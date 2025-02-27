@@ -12,10 +12,12 @@
 <table border="1">
          <tr>
           <th>Category Name</th>
+          <th>Action</th>
           </tr>
-      <c:forEach items="${categoryList}" var="m">
+      <c:forEach items="${categoryList}" var="c">
 			<tr>
-				<td>${m.categoryName}</td>
+				<td>${c.categoryName}</td>
+				<td><a href="viewcategory?categoryId=${c.categoryId}">View</a> | <a href="deletecategory?categoryId=${c.categoryId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

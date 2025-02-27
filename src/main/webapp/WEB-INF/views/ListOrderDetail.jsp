@@ -13,11 +13,13 @@
          <tr>
           <th>Quantity</th>
           <th>Price</th>
+           <th>Action</th>
           </tr>
-      <c:forEach items="${orderDetailList}" var="m">
+      <c:forEach items="${orderDetailList}" var="o">
 			<tr>
-				<td>${m.quantity}</td>
-				<td>${m.price}</td>
+				<td>${o.quantity}</td>
+				<td>${o.price}</td>
+				<td><a href="vieworderdetail?orderDetailId=${o.orderDetailId}">View</a> | <a href="deleteorderdetail?orderDetailId=${o.orderDetailId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

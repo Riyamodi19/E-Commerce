@@ -12,10 +12,12 @@
 <table border="1">
          <tr>
           <th>Area Name</th>
+          <th>Action</th>
           </tr>
-      <c:forEach items="${areaList}" var="m">
+      <c:forEach items="${areaList}" var="a">
 			<tr>
-				<td>${m.areaName }</td>
+				<td>${a.areaName }</td>
+				<td><a href="viewarea?areaId=${a.areaId}">View</a> | <a href="deletearea?areaId=${a.areaId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>
