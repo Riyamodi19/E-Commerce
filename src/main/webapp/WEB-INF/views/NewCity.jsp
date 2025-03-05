@@ -23,7 +23,6 @@ City Name:<input type="text" name="cityName"><br><br>
 
 		</select> <br><br>
 <input type="submit" value="save city">
-
 </form>
 </body>
 </html>

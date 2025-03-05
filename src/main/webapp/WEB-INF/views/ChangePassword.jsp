@@ -11,7 +11,7 @@
   <form action="updatePassword" method="post">
    
      Email:<input type="text" name="email"><br><br>
-     OTP: <input type="text" name="Otp"><br><br>
+     OTP: <input type="text" name="otp"><br><br>
      New Password:<input type="password" name="password"><br><br>
      confirm password:<input type="password" name="confirmPassword"><br><br>
      

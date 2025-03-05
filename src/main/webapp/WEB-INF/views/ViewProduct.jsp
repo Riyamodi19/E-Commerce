@@ -7,10 +7,10 @@
 <title>View Product</title>
 </head>
 <body>
-  Product Name: ${product:productName}<br>
-  Product Detail: ${product:productDetail}<br>
-  Product ImageURL1: ${product:productImageURL1}<br>
-  Product ImageURL2: ${product:productImageURL2}<br>
-  Product ImageURL3: ${product:productImageURL3}<br>
+  Product Name: ${product.productName}<br>
+  Product Detail: ${product.productDetail}<br>
+  Product ImageURL1: ${product.productImageURL1}<br>
+  Product ImageURL2: ${product.productImageURL2}<br>
+  Product ImageURL3: ${product.productImageURL3}<br>
 </body>
 </html>

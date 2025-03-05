@@ -18,14 +18,14 @@
           <th>ZipCode</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${userAddressList}" var="u">
+      <c:forEach items="${userAddressList}" var="m">
 			<tr>
-				<td>${u.title}</td>
-				<td>${u.unitName}</td>
-				<td>${u.street}</td>
-				<td>${u.landMark}</td>
-				<td>${u.zipCode}</td>
-				<td><a href="viewuseraddress?userAddressId=${u.userAddressId}">View</a> | <a href="deleteuseraddress?userAddressId=${u.userAddressId}">Delete</a> | Edit </td>
+				<td>${m.title}</td>
+				<td>${m.unitName}</td>
+				<td>${m.street}</td>
+				<td>${m.landMark}</td>
+				<td>${m.zipCode}</td>
+				<td><a href="viewuseraddress?userAddressId=${m.userAddressId}">View</a> | <a href="deleteuseraddress?userAddressId=${m.userAddressId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

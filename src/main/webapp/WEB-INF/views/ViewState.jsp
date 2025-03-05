@@ -7,6 +7,6 @@
 <title>View State</title>
 </head>
 <body>
-  State Name:${state:stateName}<br>
+  State Name:${state.stateName}<br>
 </body>
 </html>

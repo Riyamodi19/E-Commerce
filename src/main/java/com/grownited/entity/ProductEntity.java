@@ -1,14 +1,15 @@
 package com.grownited.entity;
 
 
-import java.sql.Date;
-
+import java.util.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="product")
 public class ProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,7 @@ public class ProductEntity {
 	private String productImageURL3;
 	private int quantity;
 	private Date createdAt;
+	
 	public Integer getProductId() {
 		return productId;
 	}

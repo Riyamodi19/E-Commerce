@@ -15,6 +15,7 @@ public class SubCategoryEntity {
 	private Integer subCategoryId;	
 	private Integer categoryId;
 	private String subCategoryName;
+	
 	public Integer getSubCategoryId() {
 		return subCategoryId;
 	}

@@ -7,6 +7,6 @@
 <title>View City</title>
 </head>
 <body>
-  City Name:${city:cityName}<br>
+  City Name:${city.cityName}<br>
 </body>
 </html>

@@ -11,7 +11,7 @@
 
    MemberName : ${member.memberName }<br>
    Age :  ${member.age }<br>
-   Profile Photo :  ${member.profilePhoto }<br>
+   Profile Photo : ${member.profilePhoto }<br>
    House Id:  ${member.houseId }<br>
 </body>
 </html>

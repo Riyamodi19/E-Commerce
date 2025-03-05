@@ -7,6 +7,6 @@
 <title>View Category</title>
 </head>
 <body>
-Category Name: ${category:categoryName}<br>
+Category Name: ${category.categoryName}<br>
 </body>
 </html>

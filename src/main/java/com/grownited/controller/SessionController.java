@@ -72,14 +72,53 @@ public class SessionController{
     	return "ForgetPassword";
     }
     //submit on forgetpassword
+    
     @PostMapping("sendOtp")
-    public String sendOtp() {
+    public String sendOtp(String email, Model model) {
+    	// email valid
+    			Optional<UserEntity> op = repoUser.findByEmail(email);
+    			if (op.isEmpty()) {
+    				// email invalid
+    				model.addAttribute("error", "Email not found");
+    				return "ForgetPassword";
+    			} else {
+    				// email valid
+    				// send mail otp
+    				// opt generate
+    				// send mail otp
+    				String otp = "";
+    				otp = (int) (Math.random() * 1000000) + "";// 0.25875621458541
+
+    				UserEntity user = op.get();
+    				user.setOtp(otp);
+    				repoUser.save(user);// update otp for user
+    				serviceMail.sendOtpForForgetPassword(email, user.getFirstName(), otp);
     	return "ChangePassword";
+    }
+    			
     }
     //password update and go to login
     @PostMapping("updatePassword")
-    public String updatePassword() {
-    	return "Login";
+    public String updatePassword(String email, String password, String otp, Model model) {
+    	Optional<UserEntity> op = repoUser.findByEmail(email);
+ 		if (op.isEmpty()) {
+ 			model.addAttribute("error", "Invalid Data");
+ 			return "ChangePassword";
+ 		} else {
+ 			UserEntity user = op.get();
+ 			if (user.getOtp().equals(otp)) {
+ 				String encPwd = encoder.encode(password);
+ 				user.setPassword(encPwd);
+ 				user.setOtp("");
+ 				repoUser.save(user);// update
+ 			} else {
+
+ 				model.addAttribute("error", "Invalid Data");
+ 				return "ChangePassword";
+ 			}
+ 		}
+ 		model.addAttribute("msg","Password updated");
+ 		return "Login";
     }
     @PostMapping("authenticate")
     public String authenthicate(String email, String password,Model model,HttpSession session) { //sakira@yopmail.com
@@ -120,5 +159,4 @@ public class SessionController{
 		return "redirect:/login";// login url
 	}
 
-    
 }

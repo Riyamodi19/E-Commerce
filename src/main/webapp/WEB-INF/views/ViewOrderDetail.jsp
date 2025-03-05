@@ -7,7 +7,7 @@
 <title>View Order Detail</title>
 </head>
 <body>
-  Quantity:${orderDetail:quantity}<br>
-  Price:${orderDetail:price}<br>
+  Quantity:${orderDetail.quantity}<br>
+  Price:${orderDetail.price}<br>
 </body>
 </html>

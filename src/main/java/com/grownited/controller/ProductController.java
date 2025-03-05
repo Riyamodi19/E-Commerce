@@ -1,6 +1,8 @@
 package com.grownited.controller;
 
+import java.util.Date;
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +10,33 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.ProductEntity;
+import com.grownited.entity.SubCategoryEntity;
+import com.grownited.repository.CategoryRepository;
 import com.grownited.repository.ProductRepository;
+import com.grownited.repository.SubCategoryRepository;
 
 @Controller
 public class ProductController {
 	@Autowired
 	ProductRepository repoProduct;
+		
+	@Autowired
+	CategoryRepository repoCategory;
+	
+	@Autowired
+	SubCategoryRepository repoSubCategory;
 	
 	@GetMapping("newproduct")
-	public String newProduct() {
+	public String newProduct(Model model) {
+		 List<CategoryEntity> allCategory = repoCategory.findAll();
+			model.addAttribute("allCategory",allCategory);
+			
+		List<SubCategoryEntity> allSubCategory = repoSubCategory.findAll();
+			model.addAttribute("allSubCategory",allSubCategory);
+
 		return "NewProduct";
 	}
 	@PostMapping("saveproduct")
@@ -27,8 +46,9 @@ public class ProductController {
 		System.out.println(productEntity.getProductImageURL1());
 		System.out.println(productEntity.getProductImageURL2());
 		System.out.println(productEntity.getProductImageURL3());
-		repoProduct.save(productEntity);
-		return "redirect:/listproduct";
+    	productEntity.setCreatedAt(new Date());
+		  repoProduct.save(productEntity);
+		  return "redirect:/listproduct";
 	}
 	//list product
 	@GetMapping("listproduct")

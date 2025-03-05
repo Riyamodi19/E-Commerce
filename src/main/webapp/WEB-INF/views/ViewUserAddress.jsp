@@ -7,10 +7,10 @@
 <title>View User Address</title>
 </head>
 <body>
-  Title:${userAddress:title}<br>
-  UnitName:${userAddress:unitName}<br>
-  Street:${userAddress:street}<br>
-  LandMark:${userAddress:landMark}<br>
-  ZipCode:${userAddress:zipCode}<br>
+  Title:${userAddress.title}<br>
+  UnitName:${userAddress.unitName}<br>
+  Street:${userAddress.street}<br>
+  LandMark:${userAddress.landMark}<br>
+  ZipCode:${userAddress.zipCode}<br>
 </body>
 </html>

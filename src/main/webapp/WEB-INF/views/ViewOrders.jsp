@@ -7,6 +7,6 @@
 <title>VView Orders</title>
 </head>
 <body>
-  Total Amount:${orders:totalAmount}<br>
+  Total Amount:${orders.totalAmount}<br>
 </body>
 </html>

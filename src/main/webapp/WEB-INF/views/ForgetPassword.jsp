@@ -12,6 +12,7 @@
 Email: <input type="text" name="email"><br><br>
          <input type="submit" value="Help Me"/><br><br>
 </form>
+ ${error}
 <a href="login">Go to Login</a>
 </body>
 </html>

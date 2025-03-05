@@ -7,7 +7,7 @@
 <title>View Reviews</title>
 </head>
 <body>
-   Review Text: ${reviews:reviewText}<br>
-   Rating: ${reviews:rating}<br>
+   Review Text: ${reviews.reviewText}<br>
+   Rating: ${reviews.rating}<br>
 </body>
 </html>

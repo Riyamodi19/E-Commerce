@@ -1,6 +1,7 @@
 package com.grownited.controller.admin;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public String newCity(Model model) {
 	model.addAttribute("allState",allState);
 	return "NewCity";
 }
+
 @PostMapping("savecity")
 public String saveCity(CityEntity cityEntity) {
 	System.out.println(cityEntity.getCityName());
@@ -37,11 +39,11 @@ public String saveCity(CityEntity cityEntity) {
 //list city
 @GetMapping("listcity")
 public String listCity(Model model) {
-	List<CityEntity> cityList = repoCity.findAll();// select * from members; //500 -> MemberEntity
-	
+	//List<CityEntity> cityList = repoCity.findAll();// select * from members; //500 -> MemberEntity
+	// List<CityDto> allCity = repocity.getAll();
 	//how to send data from controller to jsp 
 	//Model 
-	model.addAttribute("cityList", cityList);
+	model.addAttribute("allCity",repoCity.getAll());
 					//dataName , dataValue 
 	
 	return "ListCity";
@@ -65,7 +67,7 @@ public String viewCity(Integer cityId, Model model) {
 
 	return "ViewCity";
 }
-//deletecity
+//delete city
 @GetMapping("deletecity")
 public String deleteCity(Integer cityId) {
 	repoCity.deleteById(cityId);//delete from members where memberID = :memberId

@@ -32,7 +32,14 @@ private	String gender;
 private	String role;//member,security,chairman,admin
 private Date createdAt;
 private Integer status; //active or disabled
+private String otp; 
 
+public String getOtp() {
+	return otp;
+}
+public void setOtp(String otp) {
+	this.otp = otp;
+}
 public Integer getStatus() {
 	return status;
 }

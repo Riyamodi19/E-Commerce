@@ -7,6 +7,6 @@
 <title>View Sub Category</title>
 </head>
 <body>
-  SubCategory Name:${subCategory:subCategoryName}<br>
+  SubCategory Name:${subCategory.subCategoryName}<br>
 </body>
 </html>
