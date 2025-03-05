@@ -16,6 +16,8 @@
           <th>Street</th>
           <th>LandMark</th>
           <th>ZipCode</th>
+          <th>CityName</th>
+          <th>StateName</th>
           <th>Action</th>
           </tr>
       <c:forEach items="${userAddressList}" var="m">
@@ -25,6 +27,8 @@
 				<td>${m.street}</td>
 				<td>${m.landMark}</td>
 				<td>${m.zipCode}</td>
+				<td>${m.cityName}</td>
+				<td>${m.StateName}</td>
 				<td><a href="viewuseraddress?userAddressId=${m.userAddressId}">View</a> | <a href="deleteuseraddress?userAddressId=${m.userAddressId}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>

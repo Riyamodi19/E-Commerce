@@ -1,5 +1,6 @@
 package com.grownited.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,20 +10,33 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.OrdersEntity;
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.OrdersRepository;
+import com.grownited.repository.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class OrdersController {
 	@Autowired
    OrdersRepository repoOrders;
 	
+	@Autowired
+	UserRepository repoUser;
+	
 	@GetMapping("neworders")
-	public String newOrders() {
+	public String newOrders(Model model) {
+    List<UserEntity> allUser = repoUser.findAll();
+	 model.addAttribute("allUser",allUser);
 		return "NewOrders";
 	}
 	@PostMapping("saveorders")
-	public String saveOrders(OrdersEntity ordersEntity) {
+	public String saveOrders(OrdersEntity ordersEntity, HttpSession session) {
 		System.out.println(ordersEntity.getTotalAmount());
+		 UserEntity user = (UserEntity) session.getAttribute("user");
+			Integer userId = user.getUserId(); 
+		    ordersEntity.setUserId(userId);
+		    ordersEntity.setCreatedAt(new Date());
 		repoOrders.save(ordersEntity);
 		return "redirect:/listorders";
 	}

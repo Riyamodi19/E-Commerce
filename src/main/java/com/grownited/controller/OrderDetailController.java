@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.OrderDetailEntity;
+import com.grownited.entity.ProductEntity;
 import com.grownited.repository.OrderDetailRepository;
+import com.grownited.repository.ProductRepository;
 
 @Controller
 public class OrderDetailController {
@@ -17,8 +20,13 @@ public class OrderDetailController {
 	@Autowired
 	OrderDetailRepository repoOrderDetail;
 	
+	@Autowired
+	ProductRepository repoProduct;
+	
   @GetMapping("neworderdetail")
-  public String newOrderDetail() {
+  public String newOrderDetail(Model model) {
+	  List<ProductEntity> allProduct = repoProduct.findAll();
+		model.addAttribute("allProduct",allProduct);
 	  return "NewOrderDetail";
   }
   @PostMapping("saveorderdetail")
