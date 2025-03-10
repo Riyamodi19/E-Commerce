@@ -39,11 +39,10 @@ public String saveCity(CityEntity cityEntity) {
 //list city
 @GetMapping("listcity")
 public String listCity(Model model) {
-	//List<CityEntity> cityList = repoCity.findAll();// select * from members; //500 -> MemberEntity
-	// List<CityDto> allCity = repocity.getAll();
+	List<Object[]> listCity = repoCity.getAll();// select * from members; //500 -> MemberEntity
 	//how to send data from controller to jsp 
 	//Model 
-	model.addAttribute("allCity",repoCity.getAll());
+	model.addAttribute("allCity",listCity);
 					//dataName , dataValue 
 	
 	return "ListCity";

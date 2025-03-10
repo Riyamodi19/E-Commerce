@@ -17,9 +17,10 @@
           </tr>
       <c:forEach items="${allCity}" var="c">
 			<tr>
-				<td>${c.cityName}</td>
-				<td>${c.stateName}</td>
-				<td><a href="viewcity?cityId=${c.cityId}">View</a> | <a href="deletecity?cityId=${c.cityId}">Delete</a> | Edit </td>
+				<td>${c[1]}</td>
+				<td>${c[3]}</td>
+				<td><a href="viewcity?cityId=${c[0]}">View</a> | 
+				<a href="deletecity?cityId=${c[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

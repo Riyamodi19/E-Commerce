@@ -10,6 +10,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "city")
 public class CityEntity {
+	
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer cityId;
