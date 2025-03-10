@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Sign Up</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
+    <!-- Favicons -->
   <link href="assets/img/logo_unique.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -31,13 +26,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
 </head>
 
 <body>
@@ -52,7 +41,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo_unique.png" alt="">
+                 <img src="assets/img/logo_unique.png" alt="">
                   <span class="d-none d-lg-block">E_Commerce</span>
                 </a>
               </div><!-- End Logo -->
@@ -66,25 +55,29 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate action="saveuser" method="post">
+                  <form class="row g-3 needs-validation" action="saveuser" method="post" >
                     <div class="col-12">
-                      <label for="yourFirstName" class="form-label">First Name</label>
+                      <label for="firstName" class="form-label">First Name</label>
                       <input type="text" name="firstName" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, enter your First Name!</div>
+                      <div class="invalid-feedback">Please, enter First name!</div>
                     </div>
                     
-                     <div class="col-12">
-                      <label for="yourLastName" class="form-label">Last Name</label>
+                    <div class="col-12">
+                      <label for="lastName" class="form-label">Last Name</label>
                       <input type="text" name="lastName" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, enter your Last Name!</div>
+                      <div class="invalid-feedback">Please, enter Last name!</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Email</label>
-                      <div class="input-group has-validation">
-                        <input type="text" name="email" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your email.</div>
-                      </div>
+                      <label for="yourEmail" class="form-label">Your Email</label>
+                      <input type="email" name="email" class="form-control" id="yourEmail" required>
+                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                    </div>
+                                   
+                     <div class="col-12">
+                      <label for="contactNum" class="form-label">Contact Number</label>
+                      <input type="text" name="contactNum" class="form-control" id="contactNum" required>
+                      <div class="invalid-feedback">Please, enter your Contact Number!</div>
                     </div>
 
                     <div class="col-12">
@@ -92,37 +85,30 @@
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
-                    
                       <div class="col-12">
                       <label for="yourConfirmPassword" class="form-label">Confirm Password</label>
-                      <input type="password" name="confirmPassword" class="form-control" id="yourPassword" required>
+                      <input type="password" name="confirmPassword" class="form-control" id="yourConfirmPassword" required>
                       <div class="invalid-feedback">Please enter your Confirm Password!</div>
                     </div>
-                    
-                    <div class="col-12">
-                                          Gender
-												<input class="form-check-input" type="radio"
-													name="gender" id="gridRadios1" value="male">
-													<label class="form-check-label"
-													for="gridRadios1"> Male </label>
-										 	
-										 		<input class="form-check-input" type="radio"
-													name="gender" id="gridRadios1" value="female">
-													 <label class="form-check-label"
-													for="gridRadios1"> Female</label>
-													
-												<input class="form-check-input" type="radio"
-													name="gender" id="gridRadios1" value="other">
-													 <label class="form-check-label"
-													for="gridRadios1">Other</label>
-									 	</div>
-                     
-                    <div class="col-12">
-                      <label for="yourContactNumber" class="form-label">Contact Number</label>
-                      <input type="text" name="contactNum" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your Contact Number!</div>
-                    </div>
-                    
+                    <div class="input-group mb-3">
+              <select class="form-control" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="input-group-text"><span class="bi bi-gender-ambiguous"></span></div>
+            </div>
+            <div class="input-group mb-3">
+              <select class="form-control" name="role" required>
+                <option value="">Select Role</option>
+                <option value="USER" name="role">ADMIN</option>
+                <option value="USER" name="role">BUYER</option>
+                <option value="SELLER" name="role">SELLER</option>
+              </select>
+              <div class="input-group-text"><span class="bi bi-person-badge"></span></div>
+            </div>
+
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
@@ -141,12 +127,7 @@
                 </div>
               </div>
 
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-              </div>
+              
 
             </div>
           </div>
