@@ -11,25 +11,31 @@
 <h2>List User Address</h2>
 <table border="1">
          <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
           <th>Title</th>
-          <th>UnitName</th>
+          <th>Unit Name</th>
           <th>Street</th>
           <th>LandMark</th>
           <th>ZipCode</th>
-          <th>CityName</th>
-          <th>StateName</th>
+          <th>City Name</th>
+          <th>State Name</th>
+          <th>Address Detail</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${userAddressList}" var="m">
+      <c:forEach items="${allUserAddress}" var="m">
 			<tr>
-				<td>${m.title}</td>
-				<td>${m.unitName}</td>
-				<td>${m.street}</td>
-				<td>${m.landMark}</td>
-				<td>${m.zipCode}</td>
-				<td>${m.cityName}</td>
-				<td>${m.StateName}</td>
-				<td><a href="viewuseraddress?userAddressId=${m.userAddressId}">View</a> | <a href="deleteuseraddress?userAddressId=${m.userAddressId}">Delete</a> | Edit </td>
+			    <td>${m[13]}</td>
+			    <td>${m[14]}</td>
+				<td>${m[6]}</td>
+				<td>${m[7]}</td>
+				<td>${m[5]}</td>
+				<td>${m[3]}</td>
+				<td>${m[9]}</td>
+				<td>${m[11]}</td>
+				<td>${m[12]}</td>
+				<td>${m[10]}</td>
+				<td><a href="viewuseraddress?userAddressId=${m[0]}">View</a> | <a href="deleteuseraddress?userAddressId=${m[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

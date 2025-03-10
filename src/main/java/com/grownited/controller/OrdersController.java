@@ -43,11 +43,11 @@ public class OrdersController {
 	//list orders
 	@GetMapping("listorders")
 	  public String listOrders(Model model) {
-	  	List<OrdersEntity> ordersList = repoOrders.findAll();// select * from members; //500 -> MemberEntity
+	  	List<Object[]> listOrders = repoOrders.getAll();// select * from members; //500 -> MemberEntity
 	  	
 	  	//how to send data from controller to jsp 
 	  	//Model 
-	  	model.addAttribute("ordersList", ordersList);
+	  	model.addAttribute("allOrders", listOrders);
 	  					//dataName , dataValue 
 	  	
 	  	return "ListOrders";

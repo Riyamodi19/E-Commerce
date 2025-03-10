@@ -53,11 +53,11 @@ public class ProductController {
 	//list product
 	@GetMapping("listproduct")
 	  public String listProduct(Model model) {
-	  	List<ProductEntity> productList = repoProduct.findAll();// select * from members; //500 -> MemberEntity
+	  	List<Object[]> listProduct = repoProduct.getAll();// select * from members; //500 -> MemberEntity
 	  	
 	  	//how to send data from controller to jsp 
 	  	//Model 
-	  	model.addAttribute("productList", productList);
+	  	model.addAttribute("allProduct", listProduct);
 	  					//dataName , dataValue 
 	  	
 	  	return "ListProduct";

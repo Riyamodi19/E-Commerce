@@ -11,15 +11,17 @@
 <h2>List Order Detail</h2>
 <table border="1">
          <tr>
+         <th>Product Name</th>
           <th>Quantity</th>
           <th>Price</th>
            <th>Action</th>
           </tr>
-      <c:forEach items="${orderDetailList}" var="o">
+      <c:forEach items="${allOrderDetail}" var="o">
 			<tr>
-				<td>${o.quantity}</td>
-				<td>${o.price}</td>
-				<td><a href="vieworderdetail?orderDetailId=${o.orderDetailId}">View</a> | <a href="deleteorderdetail?orderDetailId=${o.orderDetailId}">Delete</a> | Edit </td>
+			    <td>${o[6]}</td>
+				<td>${o[4]}</td>
+				<td>${o[2]}</td>
+				<td><a href="vieworderdetail?orderDetailId=${o[0]}">View</a> | <a href="deleteorderdetail?orderDetailId=${o[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

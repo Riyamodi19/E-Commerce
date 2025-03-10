@@ -39,11 +39,11 @@ public class OrderDetailController {
   //list oder detail
   @GetMapping("listorderdetail")
   public String listOrderDetail(Model model) {
-  	List<OrderDetailEntity> orderDetailList = repoOrderDetail.findAll();// select * from members; //500 -> MemberEntity
+  	List<Object[]> listOrderDetail = repoOrderDetail.getAll();// select * from members; //500 -> MemberEntity
   	
   	//how to send data from controller to jsp 
   	//Model 
-  	model.addAttribute("orderDetailList", orderDetailList);
+  	model.addAttribute("allOrderDetail",listOrderDetail);
   					//dataName , dataValue 
   	
   	return "ListOrderDetail";

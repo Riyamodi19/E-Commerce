@@ -65,11 +65,11 @@ public class UserAddressController {
 	  //list User Address
 	  @GetMapping("listuseraddress")
 	  public String listUserAddress(Model model) {
-	  	//List<UserAddressEntity> userAddressList = repoUserAddress.findAll();// select * from members; //500 -> MemberEntity
+		  List<Object[]> listUserAddress = repoUserAddress.getAll();// select * from members; //500 -> MemberEntity
 	  	
 	  	//how to send data from controller to jsp 
 	  	//Model 
-		  model.addAttribute("allUserAddress",repoUserAddress.getAll());	  					//dataName , dataValue 
+		  model.addAttribute("allUserAddress",listUserAddress);	  					//dataName , dataValue 
 	  	
 	  	return "ListUserAddress";
 	  }

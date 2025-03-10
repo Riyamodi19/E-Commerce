@@ -55,11 +55,11 @@ public class ReviewsController {
     //list Reviews
     @GetMapping("listreviews")
 	  public String listReviews(Model model) {
-	  	List<ReviewsEntity> reviewsList = repoReviews.findAll();// select * from members; //500 -> MemberEntity
+	  	List<Object[]> listReviews = repoReviews.getAll();// select * from members; //500 -> MemberEntity
 	  	
 	  	//how to send data from controller to jsp 
 	  	//Model 
-	  	model.addAttribute("reviewsList", reviewsList);
+	  	model.addAttribute("allReviews", listReviews);
 	  					//dataName , dataValue 
 	  	
 	  	return "ListReviews";

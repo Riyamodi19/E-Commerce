@@ -40,11 +40,11 @@ public class SubCategoryController {
    //list Sub category
    @GetMapping("listsubcategory")
    public String listSubCategory(Model model) {
-   	List<SubCategoryEntity> subcategoryList = repoSubCategory.findAll();// select * from members; //500 -> MemberEntity
+	   List<Object[]> listsubCategory = repoSubCategory.getAll();// select * from members; //500 -> MemberEntity
    	
    	//how to send data from controller to jsp 
    	//Model 
-   	model.addAttribute("subcategoryList", subcategoryList);
+	   model.addAttribute("allsubCategory",listsubCategory);
    					//dataName , dataValue 
    	
    	return "ListSubCategory";

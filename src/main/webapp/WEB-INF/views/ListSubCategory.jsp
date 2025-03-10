@@ -11,13 +11,15 @@
 <h2>List SubCategory</h2>
 <table border="1">
          <tr>
+         <th>Category Name</th>
           <th>SubCategory Name</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${subcategoryList}" var="s">
+      <c:forEach items="${allsubCategory}" var="s">
 			<tr>
-				<td>${s.subCategoryName}</td>
-				<td><a href="viewsubcategory?subCategoryId=${s.subCategoryId}">View</a> | <a href="deletesubcategory?subCategoryId=${s.subCategoryId}">Delete</a> | Edit </td>
+			    <td>${s[3]}</td>
+				<td>${s[2]}</td>
+				<td><a href="viewsubcategory?subCategoryId=${s[0]}">View</a> | <a href="deletesubcategory?subCategoryId=${s[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

@@ -12,20 +12,24 @@
 <table border="1">
          <tr>
           <th>Product Name</th>
+          <th>Category Name</th>
+          <th>SubCategory Name</th>
           <th>Product Detail</th>
           <th>Product ImageURL1</th>
           <th>product ImageURL2</th>
           <th>product ImageURL3</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${productList}" var="p">
+      <c:forEach items="${allProduct}" var="p">
 			<tr>
-				<td>${p.productName}</td>
-				<td>${p.productDetail}</td>
-				<td>${p.productImageURL1}</td>
-				<td>${p.productImageURL2}</td>
-				<td>${p.productImageURL3}</td>
-				<td><a href="viewproduct?productId=${p.productId}">View</a> | <a href="deleteproduct?productId=${p.productId}">Delete</a> | Edit </td>
+				<td>${p[10]}</td>
+				<td>${p[13]}</td>
+				<td>${p[14]}</td>
+				<td>${p[6]}</td>
+				<td>${p[7]}</td>
+				<td>${p[8]}</td>
+				<td>${p[9]}</td>
+				<td><a href="viewproduct?productId=${p[0]}">View</a> | <a href="deleteproduct?productId=${p[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

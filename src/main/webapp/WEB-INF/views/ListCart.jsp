@@ -11,13 +11,19 @@
 <h2>List Cart</h2>
 <table border="1">
          <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Product Name</th>
           <th>Cart Quantity</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${cartList}" var="c">
+      <c:forEach items="${allCart}" var="c">
 			<tr>
-				<td>${c.quantity}</td>
-				<td><a href="viewcart?cartId=${c.cartId}">View</a> | <a href="deletecart?cartId=${c.cartId}">Delete</a> | Edit </td>
+			    <td>${c[5]}</td>
+			    <td>${c[6]}</td>
+			    <td>${c[4]}</td>
+				<td>${c[2]}</td>
+				<td><a href="viewcart?cartId=${c[0]}">View</a> | <a href="deletecart?cartId=${c[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>

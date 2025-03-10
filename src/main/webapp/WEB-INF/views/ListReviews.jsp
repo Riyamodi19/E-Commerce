@@ -11,15 +11,21 @@
 <h2>List Reviews</h2>
 <table border="1">
          <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Product Name</th>
           <th>Review Text</th>
           <th>Rating</th>
           <th>Action</th>
           </tr>
-      <c:forEach items="${reviewsList}" var="r">
+      <c:forEach items="${allReviews}" var="r">
 			<tr>
-				<td>${r.reviewText}</td>
-				<td>${r.rating}</td>
-				<td><a href="viewreviews?reviewId=${r.reviewId}">View</a> | <a href="deletereviews?reviewId=${r.reviewId}">Delete</a> | Edit </td>
+			    <td>${r[6]}</td>
+			    <td>${r[7]}</td>
+			    <td>${r[8]}</td>
+				<td>${r[3]}</td>
+				<td>${r[4]}</td>
+				<td><a href="viewreviews?reviewId=${r[0]}">View</a> | <a href="deletereviews?reviewId=${r[0]}">Delete</a> | Edit </td>
 			</tr>
 		</c:forEach>
 	</table>
