@@ -12,7 +12,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo_unique.png" rel="icon">
+  <link href="assets/img/logo_uni.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -52,7 +52,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo_unique.png" alt="">
+                  <img src="assets/img/logo_uni.png" alt="">
                   <span class="d-none d-lg-block">E_Commerce</span>
                 </a>
               </div><!-- End Logo -->

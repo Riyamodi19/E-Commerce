@@ -28,7 +28,15 @@ private	String role;//member,security,chairman,admin
 private Date createdAt;
 private Integer status; //active or disabled
 private String otp; 
+private String profilePicPath;
 
+
+public String getProfilePicPath() {
+	return profilePicPath;
+}
+public void setProfilePicPath(String profilePicPath) {
+	this.profilePicPath = profilePicPath;
+}
 public String getOtp() {
 	return otp;
 }

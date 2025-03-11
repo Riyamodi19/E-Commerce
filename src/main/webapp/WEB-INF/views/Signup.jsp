@@ -7,7 +7,7 @@
 
   <title>Sign Up</title>
     <!-- Favicons -->
-  <link href="assets/img/logo_unique.png" rel="icon">
+  <link href="assets/img/logo_uni.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -41,7 +41,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                 <img src="assets/img/logo_unique.png" alt="">
+                 <img src="assets/img/logo_uni.png" alt="">
                   <span class="d-none d-lg-block">E_Commerce</span>
                 </a>
               </div><!-- End Logo -->
@@ -55,7 +55,7 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" action="saveuser" method="post" >
+                  <form class="row g-3 needs-validation" action="saveuser" method="post" enctype ="multipart/form-data">
                     <div class="col-12">
                       <label for="firstName" class="form-label">First Name</label>
                       <input type="text" name="firstName" class="form-control" id="yourName" required>
@@ -90,6 +90,7 @@
                       <input type="password" name="confirmPassword" class="form-control" id="yourConfirmPassword" required>
                       <div class="invalid-feedback">Please enter your Confirm Password!</div>
                     </div>
+                    
                     <div class="input-group mb-3">
               <select class="form-control" name="gender" required>
                 <option value="">Select Gender</option>
@@ -99,6 +100,7 @@
               </select>
               <div class="input-group-text"><span class="bi bi-gender-ambiguous"></span></div>
             </div>
+            
             <div class="input-group mb-3">
               <select class="form-control" name="role" required>
                 <option value="">Select Role</option>
@@ -108,6 +110,13 @@
               </select>
               <div class="input-group-text"><span class="bi bi-person-badge"></span></div>
             </div>
+             
+             <div class="input-group mb-3">
+	        <input type="file" class="form-control" placeholder="Profile"name="profilePic" />
+			<div class="input-group-text">
+		  <span class="bi bi-cake"></span>
+		 </div>
+						</div>
 
                     <div class="col-12">
                       <div class="form-check">

@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +8,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>State</title>
+<title>User</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -26,11 +25,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>State</h1>
+			<h1>User</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">State</li>
+					<li class="breadcrumb-item active">User</li>
 				</ol>
 			</nav>
 		</div>
@@ -49,22 +48,30 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										State<span>/all</span>
+										User<span>/all</span>
 									</h5>
 
 
-									<table class="table datatable datatable-table table-hover" id="state">
+									<table class="table datatable datatable-table table-hover" id="users">
 										<thead>
-					                      <th>State Name</th>
+										  <th>First Name</th>
+					                      <th>Last Name</th>
+					                      <th>Email</th>
+					                      <th>Contact Number</th>
+					                      <th>Created At</th>
 				                          <th>Actions</th>
 										</thead>
 
 										<tbody>
-											<c:forEach items="${stateList}" var="s">
+											<c:forEach items="${userList}" var="u">
 												<tr>
-						                            <td>${s.stateName}</td> 
-							             			<td><a href="#">Edit</a> |<a href="deletestate?stateId=${s.stateId}">Delete</a>|
-													 <a href="viewstate?stateId=${s.stateId}">View</a>
+                                                    <td>${u.firstName}</td>
+                                                    <td>${u.lastName}</td>
+                                                    <td>${u.email}</td>
+                                                    <td>${u.contactNum}</td>
+                                                    <td>${u.createdAt}</td>
+                                                    <td><a href="#">Edit</a> |<a href="deleteuser?userId=${u.userId}">Delete</a>|
+													 <a href="viewuser?userId=${u.userId}">View</a>
 													 </td>
 												</tr>
 											</c:forEach>
@@ -108,7 +115,7 @@
 	<script type="text/javascript">
 
 	$( document ).ready(function() {
-		let table = new DataTable('#state');
+		let table = new DataTable('#users');
 	});
 	</script>
 

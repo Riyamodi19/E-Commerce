@@ -8,6 +8,7 @@
 
 <title>Admin Dashboard</title>
 
+
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
 
@@ -20,7 +21,7 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>Admin Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -197,10 +198,7 @@
 
 					</div>
 				</div>
-				<!-- End Left side columns -->
-
-				<!-- Right side columns -->
-				<!-- End Right side columns -->
+			
 
 			</div>
 		</section>

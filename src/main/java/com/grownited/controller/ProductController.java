@@ -42,10 +42,14 @@ public class ProductController {
 	@PostMapping("saveproduct")
 	public String saveProduct(ProductEntity productEntity) {
 		System.out.println(productEntity.getProductName());
+		System.out.println(productEntity.getBasePrice());
+		System.out.println(productEntity.getOfferPrice());
+		System.out.println(productEntity.getOfferPercentage());
 		System.out.println(productEntity.getProductDetail());
 		System.out.println(productEntity.getProductImageURL1());
 		System.out.println(productEntity.getProductImageURL2());
 		System.out.println(productEntity.getProductImageURL3());
+		System.out.println(productEntity.getQuantity());
     	productEntity.setCreatedAt(new Date());
 		  repoProduct.save(productEntity);
 		  return "redirect:/listproduct";
