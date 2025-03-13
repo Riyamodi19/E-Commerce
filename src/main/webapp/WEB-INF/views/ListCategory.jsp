@@ -17,7 +17,7 @@
       <c:forEach items="${categoryList}" var="c">
 			<tr>
 				<td>${c.categoryName}</td>
-				<td><a href="viewcategory?categoryId=${c.categoryId}">View</a> | <a href="deletecategory?categoryId=${c.categoryId}">Delete</a> | Edit </td>
+				<td><a href="viewcategory?categoryId=${c.categoryId}">View</a> | <a href="deletecategory?categoryId=${c.categoryId}">Delete</a> | <a href="editcategory?categoryId=${c.categoryId}">Edit</a>  </td>
 			</tr>
 		</c:forEach>
 	</table>

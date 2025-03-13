@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.Date;
+
 import java.util.List;
 
 import java.util.Optional;
@@ -71,18 +72,19 @@ public class ProductController {
 		@GetMapping("viewproduct")
 		public String viewProduct(Integer productId, Model model) {
 			// ?
-			System.out.println("id ===> " + productId);
-			Optional<ProductEntity> op = repoProduct.findById(productId);
-			if (op.isEmpty()) {
-				// not found
-			} else {
-				// data found
-		        ProductEntity product = op.get();
-				// send data to jsp ->
-				model.addAttribute("product", product);
-
-			}
-
+//			System.out.println("id ===> " + productId);
+//			Optional<ProductEntity> op = repoProduct.findById(productId);
+//			if (op.isEmpty()) {
+//				// not found
+//			} else {
+//				// data found
+//		        ProductEntity product = op.get();
+//				// send data to jsp ->
+//				model.addAttribute("product", product);
+//
+//			}
+			List<Object[]> op = repoProduct.getByProductId(productId);
+			model.addAttribute("product", op);
 			return "ViewProduct";
 		}
 		//delete product
@@ -91,4 +93,49 @@ public class ProductController {
 			repoProduct.deleteById(productId);//delete from members where memberID = :memberId
 			return "redirect:/listproduct";
 		}
-}
+		
+		//edit product
+
+		@GetMapping("editproduct")
+		public String editProduct(Integer productId,Model model) {
+			Optional<ProductEntity> op = repoProduct.findById(productId);
+			if (op.isEmpty()) {
+				return "redirect:/listproduct";
+			} else {
+				model.addAttribute("product",op.get());
+				return "EditProduct";
+
+			}
+		}
+		//save -> entity -> no id present -> insert 
+		//save -> entity -> id present -> not present in db -> insert 
+		//save -> entity -> id present -> present in db -> update  
+
+		//update product
+
+		@PostMapping("updateproduct")
+		public String updateProduct(ProductEntity productEntity) {//pcode vhreg type vid 
+			
+			System.out.println(productEntity.getProductId());//id? db? 
+
+			Optional<ProductEntity> op = repoProduct.findById(productEntity.getProductId());
+			
+			if(op.isPresent())
+			{
+				ProductEntity dbProduct = op.get(); //pcode vhreg type id userId 
+				dbProduct.setProductName(productEntity.getProductName());//code 
+				dbProduct.setBasePrice(productEntity.getBasePrice());//code 
+				dbProduct.setOfferPrice(productEntity.getOfferPrice());//code 
+				dbProduct.setOfferePercentage(productEntity.getOfferPercentage());//code 
+				dbProduct.setProductDetail(productEntity.getProductDetail());//code 
+				dbProduct.setProductImageURL1(productEntity.getProductImageURL1());//code 
+				dbProduct.setProductImageURL2(productEntity.getProductImageURL2());//code 
+				dbProduct.setProductImageURL3(productEntity.getProductImageURL3());//code 
+				dbProduct.setQuantity(productEntity.getQuantity());//code 
+				repoProduct.save(dbProduct);
+			}
+			return "redirect:/listproduct";
+		}
+
+		}
+

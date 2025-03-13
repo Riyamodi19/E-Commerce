@@ -23,7 +23,7 @@
 			    <td>${c[6]}</td>
 			    <td>${c[4]}</td>
 				<td>${c[2]}</td>
-				<td><a href="viewcart?cartId=${c[0]}">View</a> | <a href="deletecart?cartId=${c[0]}">Delete</a> | Edit </td>
+				<td><a href="viewcart?cartId=${c[0]}">View</a> | <a href="deletecart?cartId=${c[0]}">Delete</a> | <a href="editcart?cartId=${c[0]}">Edit</a> </td>
 			</tr>
 		</c:forEach>
 	</table>

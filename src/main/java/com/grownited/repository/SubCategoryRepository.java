@@ -13,4 +13,8 @@ public interface SubCategoryRepository extends JpaRepository<SubCategoryEntity, 
      
 	    @Query(value = "select sb.*, c.category_name from subcategory sb, category c where sb.category_id = c.category_id", nativeQuery = true)
 	    List<Object[]>getAll();
+	    
+	    @Query(value = "select sb.*, c.category_name from subcategory sb, category c where sb.category_id = c.category_id and sb.sub_category_id = :subCategoryId", nativeQuery = true)
+	    List<Object[]>getBySubCategoryId(Integer subCategoryId);
 }
+

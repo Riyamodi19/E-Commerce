@@ -11,6 +11,10 @@ import com.grownited.entity.ProductEntity;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Integer>{
         
-	  @Query(value = " select p.* ,c.category_name, sb.sub_category_name from product p, category c, subcategory sb where p.category_id = c.category_id and p.sub_category_id = sb.sub_category_id;", nativeQuery = true)
+	  @Query(value = " select p.* ,c.category_name, sb.sub_category_name from product p, category c, subcategory sb where p.category_id = c.category_id and p.sub_category_id = sb.sub_category_id", nativeQuery = true)
 	  List<Object[]>getAll();
+	  
+	  @Query(value = " select p.* ,c.category_name, sb.sub_category_name from product p, category c, subcategory sb where p.category_id = c.category_id and p.sub_category_id = sb.sub_category_id and p.product_id = :productId", nativeQuery = true)
+	 	 List<Object[]> getByProductId(Integer productId);
+
 }

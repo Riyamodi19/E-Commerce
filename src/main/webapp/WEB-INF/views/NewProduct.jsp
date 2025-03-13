@@ -34,7 +34,7 @@
 		</select> <br><br>
   Base Price: <input type="text" name="basePrice"><br><br>		
   Offer Price: <input type="text" name="offerPrice"><br><br>		
-  Offer Percentage: <input type="text" name="offerePercentage"><br><br>		
+  Offer Percentage: <input type="text" name="offerPercentage"><br><br>		
   Product Detail: <input type="text" name="productDetail"><br><br>	
   Product ImageURL1: <input type="url" name="productImageURL1"><br><br>
   product ImageURL2: <input type="url" name="productImageURL2"><br><br>

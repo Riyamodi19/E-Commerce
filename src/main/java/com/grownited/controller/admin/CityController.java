@@ -1,7 +1,6 @@
 package com.grownited.controller.admin;
 
 import java.util.List;
-
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,24 +51,57 @@ public String listCity(Model model) {
 @GetMapping("viewcity")
 public String viewCity(Integer cityId, Model model) {
 	// ?
-	System.out.println("id ===> " + cityId);
-	Optional<CityEntity> op = repoCity.findById(cityId);
-	if (op.isEmpty()) {
+	//System.out.println("id ===> " + cityId);
+	//Optional<CityEntity> op = repoCity.findById(cityId);
+	//if (op.isEmpty()) {
 		// not found
-	} else {
+	//} else {
 		// data found
-        CityEntity city = op.get();
+       //CityEntity city = op.get();
 		// send data to jsp ->
-		model.addAttribute("city", city);
-
-	}
-
+		//model.addAttribute("city", city);
+	List<Object[]> op = repoCity.getByCityId(cityId);
+	model.addAttribute("city", op);
 	return "ViewCity";
 }
 //delete city
 @GetMapping("deletecity")
 public String deleteCity(Integer cityId) {
 	repoCity.deleteById(cityId);//delete from members where memberID = :memberId
+	return "redirect:/listcity";
+}
+//edit city 
+
+@GetMapping("editcity")
+public String editCity(Integer cityId,Model model) {
+	Optional<CityEntity> op = repoCity.findById(cityId);
+	if (op.isEmpty()) {
+		return "redirect:/listcity";
+	} else {
+		model.addAttribute("city",op.get());
+		return "EditCity";
+
+	}
+}
+//save -> entity -> no id present -> insert 
+//save -> entity -> id present -> not present in db -> insert 
+//save -> entity -> id present -> present in db -> update  
+
+//update city
+
+@PostMapping("updatecity")
+public String updateCity(CityEntity cityEntity) {//pcode vhreg type vid 
+	
+	System.out.println(cityEntity.getCityId());//id? db? 
+
+	Optional<CityEntity> op = repoCity.findById(cityEntity.getCityId());
+	
+	if(op.isPresent())
+	{
+		CityEntity dbCity = op.get(); //pcode vhreg type id userId 
+		dbCity.setCityName(cityEntity.getCityName());//code 
+		repoCity.save(dbCity);
+	}
 	return "redirect:/listcity";
 }
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,22 @@
 <title>View City</title>
 </head>
 <body>
-  City Name:${city.cityName}<br>
+<h2>View City</h2>
+  <table border="1">
+         <tr>
+          <th>City Name</th>
+          <th>State Name</th>
+          </tr>
+      <c:forEach items="${city}" var="c">
+			<tr>
+				<td>${c[1]}</td>
+				<td>${c[3]}</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<!--  <hr>
+	<hr>
+	${vehicle[0][0]}<br>
+	${vehicle[0][1]}<Br> -->
 </body>
 </html>

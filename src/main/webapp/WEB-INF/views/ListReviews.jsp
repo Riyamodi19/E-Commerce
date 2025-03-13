@@ -25,7 +25,7 @@
 			    <td>${r[8]}</td>
 				<td>${r[3]}</td>
 				<td>${r[4]}</td>
-				<td><a href="viewreviews?reviewId=${r[0]}">View</a> | <a href="deletereviews?reviewId=${r[0]}">Delete</a> | Edit </td>
+				<td><a href="viewreviews?reviewId=${r[0]}">View</a> | <a href="deletereviews?reviewId=${r[0]}">Delete</a> | <a href="editreviews?reviewId=${r[0]}">Edit</a> </td>
 			</tr>
 		</c:forEach>
 	</table>

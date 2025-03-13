@@ -10,7 +10,7 @@
 <body>
 <h2>List City</h2>
 <table border="1">
-         <tr>
+          <tr>
           <th>City Name</th>
           <th>State Name</th>
           <th>Action</th>
@@ -20,7 +20,7 @@
 				<td>${c[1]}</td>
 				<td>${c[3]}</td>
 				<td><a href="viewcity?cityId=${c[0]}">View</a> | 
-				<a href="deletecity?cityId=${c[0]}">Delete</a> | Edit </td>
+				<a href="deletecity?cityId=${c[0]}">Delete</a> | <a href="editcity?cityId=${c[0]}">Edit</a>  </td>
 			</tr>
 		</c:forEach>
 	</table>

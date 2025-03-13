@@ -19,7 +19,7 @@
 			<tr>
 			    <td>${s[3]}</td>
 				<td>${s[2]}</td>
-				<td><a href="viewsubcategory?subCategoryId=${s[0]}">View</a> | <a href="deletesubcategory?subCategoryId=${s[0]}">Delete</a> | Edit </td>
+				<td><a href="viewsubcategory?subCategoryId=${s[0]}">View</a> | <a href="deletesubcategory?subCategoryId=${s[0]}">Delete</a> | <a href="editsubcategory?subCategoryId=${s[0]}">Edit</a> </td>
 			</tr>
 		</c:forEach>
 	</table>

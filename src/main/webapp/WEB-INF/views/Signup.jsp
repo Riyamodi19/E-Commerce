@@ -55,42 +55,60 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" action="saveuser" method="post" enctype ="multipart/form-data">
+                  <form class="row g-3 needs-validation" action="saveuser" method="post" enctype="multipart/form-data" >
                     <div class="col-12">
                       <label for="firstName" class="form-label">First Name</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
                       <input type="text" name="firstName" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Please, enter First name!</div>
+                      </div>
                     </div>
                     
                     <div class="col-12">
                       <label for="lastName" class="form-label">Last Name</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
                       <input type="text" name="lastName" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Please, enter Last name!</div>
+                      </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                       <input type="email" name="email" class="form-control" id="yourEmail" required>
                       <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                      </div>
                     </div>
                                    
                      <div class="col-12">
                       <label for="contactNum" class="form-label">Contact Number</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-telephone"></i></span>
                       <input type="text" name="contactNum" class="form-control" id="contactNum" required>
                       <div class="invalid-feedback">Please, enter your Contact Number!</div>
+                      </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
+                      </div>
                     </div>
                       <div class="col-12">
                       <label for="yourConfirmPassword" class="form-label">Confirm Password</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                       <input type="password" name="confirmPassword" class="form-control" id="yourConfirmPassword" required>
                       <div class="invalid-feedback">Please enter your Confirm Password!</div>
+                      </div>
                     </div>
-                    
+
                     <div class="input-group mb-3">
               <select class="form-control" name="gender" required>
                 <option value="">Select Gender</option>
@@ -100,7 +118,6 @@
               </select>
               <div class="input-group-text"><span class="bi bi-gender-ambiguous"></span></div>
             </div>
-            
             <div class="input-group mb-3">
               <select class="form-control" name="role" required>
                 <option value="">Select Role</option>
@@ -110,14 +127,14 @@
               </select>
               <div class="input-group-text"><span class="bi bi-person-badge"></span></div>
             </div>
-             
-             <div class="input-group mb-3">
-	        <input type="file" class="form-control" placeholder="Profile"name="profilePic" />
-			<div class="input-group-text">
-		  <span class="bi bi-cake"></span>
-		 </div>
-						</div>
-
+                   <div class="col-12">
+                      <label for="profilePic" class="form-label">Profile Pic</label>
+                      <div class="input-group has-validation">
+                      <span class="input-group-text"><i class="bi bi-image"></i></span>
+                      <input type="file" name="profilePic" class="form-control" id="yourPic" required>
+                      <div class="invalid-feedback">Please, upload your ProfilePic!</div>
+                      </div>
+                    </div>
                     <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
@@ -126,7 +143,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Sign Up</button>
+                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Already have an account? <a href="login">Log in</a></p>

@@ -35,7 +35,7 @@
 				<td>${m[11]}</td>
 				<td>${m[12]}</td>
 				<td>${m[10]}</td>
-				<td><a href="viewuseraddress?userAddressId=${m[0]}">View</a> | <a href="deleteuseraddress?userAddressId=${m[0]}">Delete</a> | Edit </td>
+				<td><a href="viewuseraddress?userAddressId=${m[0]}">View</a> | <a href="deleteuseraddress?userAddressId=${m[0]}">Delete</a> | <a href="edituseraddress?userAddressId=${m[0]}">Edit</a>  </td>
 			</tr>
 		</c:forEach>
 	</table>

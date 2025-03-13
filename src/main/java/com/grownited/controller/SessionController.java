@@ -1,6 +1,8 @@
 package com.grownited.controller;
 
 import java.io.IOException;
+
+
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -124,7 +126,7 @@ public class SessionController{
     			
     }
     //password update and go to login
-    @PostMapping("updatePassword")
+    @PostMapping("updatepassword")
     public String updatePassword(String email, String password, String otp, Model model) {
     	Optional<UserEntity> op = repoUser.findByEmail(email);
  		if (op.isEmpty()) {
@@ -210,6 +212,47 @@ public class SessionController{
 		repoUser.deleteById(userId);//delete from members where memberID = :memberId
 		return "redirect:/listuser";
 	}
+  //edit user 
+
+    @GetMapping("edituser")
+    public String editUser(Integer userId,Model model) {
+    	Optional<UserEntity> op = repoUser.findById(userId);
+    	if (op.isEmpty()) {
+    		return "redirect:/listuser";
+    	} else {
+    		model.addAttribute("users",op.get());
+    		return "EditUser";
+
+    	}
+    }
+    //save -> entity -> no id present -> insert 
+    //save -> entity -> id present -> not present in db -> insert 
+    //save -> entity -> id present -> present in db -> update  
+
+    //update city
+
+    @PostMapping("updateuser")
+    public String updateUser(UserEntity userEntity) {//pcode vhreg type vid 
+    	
+    	System.out.println(userEntity.getUserId());//id? db? 
+
+    	Optional<UserEntity> op = repoUser.findById(userEntity.getUserId());
+    	
+    	if(op.isPresent())
+    	{
+    		UserEntity dbUser = op.get(); //pcode vhreg type id userId 
+    		dbUser.setFirstName(userEntity.getFirstName());//code 
+    		dbUser.setLastName(userEntity.getLastName());//code 
+    		dbUser.setEmail(userEntity.getEmail());//code 
+    		dbUser.setPassword(userEntity.getPassword());//code 
+    		dbUser.setConfirmPassword(userEntity.getConfirmPassword());//code 
+    		dbUser.setGender(userEntity.getGender());//code 
+    		dbUser.setContactNum(userEntity.getContactNum());//code 
+    		repoUser.save(dbUser);
+    	}
+    	return "redirect:/listuser";
+    }
+
     
      @GetMapping("logout")
 	 public String logout(HttpSession session) {

@@ -37,7 +37,7 @@
 				<td>${p[8]}</td>
 				<td>${p[9]}</td>
 				<td>${p[11]}</td>
-				<td><a href="viewproduct?productId=${p[0]}">View</a> | <a href="deleteproduct?productId=${p[0]}">Delete</a> | Edit </td>
+				<td><a href="viewproduct?productId=${p[0]}">View</a> | <a href="deleteproduct?productId=${p[0]}">Delete</a> | <a href="editproduct?productId=${p[0]}">Edit</a> </td>
 			</tr>
 		</c:forEach>
 	</table>

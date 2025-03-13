@@ -13,4 +13,8 @@ public interface ReviewsRepository extends JpaRepository<ReviewsEntity, Integer>
 
 	 @Query(value = "select r.*, u.first_name, u.last_name, p.product_name from reviews r, users u, product p where r.product_id = p.product_id and r.user_id  = u.user_id", nativeQuery = true)
 	 List<Object[]>getAll();
+	 
+	 @Query(value = "select r.*, u.first_name, u.last_name, p.product_name from reviews r, users u, product p where r.product_id = p.product_id and r.user_id  = u.user_id and r.review_id = :reviewId", nativeQuery = true)
+ 	 List<Object[]> getByReviewId(Integer reviewId);
+
 }

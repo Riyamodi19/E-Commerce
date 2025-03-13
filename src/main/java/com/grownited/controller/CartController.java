@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,18 +64,19 @@ public String listCart(Model model) {
 @GetMapping("viewcart")
 public String viewCart(Integer cartId, Model model) {
 	// ?
-	System.out.println("id ===> " + cartId);
-	Optional<CartEntity> op = repoCart.findById(cartId);
-	if (op.isEmpty()) {
-		// not found
-	} else {
-		// data found
-        CartEntity cart = op.get();
-		// send data to jsp ->
-		model.addAttribute("cart", cart);
-
-	}
-
+//	System.out.println("id ===> " + cartId);
+//	Optional<CartEntity> op = repoCart.findById(cartId);
+//	if (op.isEmpty()) {
+//		// not found
+//	} else {
+//		// data found
+//        CartEntity cart = op.get();
+//		// send data to jsp ->
+//		model.addAttribute("cart", cart);
+//
+//	}
+	List<Object[]> op = repoCart.getByCartId(cartId);
+	model.addAttribute("cart", op);
 	return "ViewCart";
 }
 //deletecart
@@ -83,5 +85,41 @@ public String deleteArea(Integer cartId) {
 	repoCart.deleteById(cartId);//delete from members where memberID = :memberId
 	return "redirect:/listcart";
 }
+//edit cart
+
+@GetMapping("editcart")
+public String editCart(Integer cartId,Model model) {
+	Optional<CartEntity> op = repoCart.findById(cartId);
+	if (op.isEmpty()) {
+		return "redirect:/listcart";
+	} else {
+		model.addAttribute("cart",op.get());
+		return "EditCart";
+
+	}
+}
+//save -> entity -> no id present -> insert 
+//save -> entity -> id present -> not present in db -> insert 
+//save -> entity -> id present -> present in db -> update  
+
+//update cart
+
+@PostMapping("updatecart")
+public String updateCart(CartEntity cartEntity) {//pcode vhreg type vid 
+	
+	System.out.println(cartEntity.getCartId());//id? db? 
+
+	Optional<CartEntity> op = repoCart.findById(cartEntity.getCartId());
+	
+	if(op.isPresent())
+	{
+		CartEntity dbCart = op.get(); //pcode vhreg type id userId 
+		dbCart.setQuantity(cartEntity.getQuantity());//code 
+		repoCart.save(dbCart);
+	}
+	return "redirect:/listcart";
+}
 
 }
+
+

@@ -13,4 +13,8 @@ public interface OrdersRepository extends JpaRepository<OrdersEntity, Integer>{
 	
    @Query(value = "select o.*, u.first_name, u.last_name from orders o, users u where o.user_id = u.user_id", nativeQuery = true)
    List<Object[]>getAll();
+   
+   @Query(value = "select o.*, u.first_name, u.last_name from orders o, users u where o.user_id = u.user_id  and o.order_id = :orderId", nativeQuery = true)
+	 List<Object[]> getByOrderId(Integer orderId);
+
 }

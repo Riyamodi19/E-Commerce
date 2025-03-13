@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Category</title>
+<title>New Category</title>
 </head>
 <body>
-<h2>Category</h2>
+<h2> New Category</h2>
 <form action="savecategory" method="post">
 Category Name: <input type="text" name="categoryName"><br><br>
 <input type="submit" value="save category">

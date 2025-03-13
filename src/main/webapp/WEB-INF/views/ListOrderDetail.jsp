@@ -14,6 +14,7 @@
          <th>Product Name</th>
           <th>Quantity</th>
           <th>Price</th>
+          <th>Status</th>
            <th>Action</th>
           </tr>
       <c:forEach items="${allOrderDetail}" var="o">
@@ -21,7 +22,8 @@
 			    <td>${o[6]}</td>
 				<td>${o[4]}</td>
 				<td>${o[2]}</td>
-				<td><a href="vieworderdetail?orderDetailId=${o[0]}">View</a> | <a href="deleteorderdetail?orderDetailId=${o[0]}">Delete</a> | Edit </td>
+				<td>${o[5]}</td>
+				<td><a href="vieworderdetail?orderDetailId=${o[0]}">View</a> | <a href="deleteorderdetail?orderDetailId=${o[0]}">Delete</a> | <a href="editorderdetail?orderDetailId=${o[0]}">Edit</a> </td>
 			</tr>
 		</c:forEach>
 	</table>
