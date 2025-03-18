@@ -1,6 +1,4 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -8,110 +6,85 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-<title>State</title>
+<title>List State</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
+<link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 
-<link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
-
+<!-- Custom Styles -->
+<style>
+    td:last-child {
+        white-space: nowrap; /* Prevent text wrapping in action column */
+    }
+</style>
 
 </head>
 <body>
-	<jsp:include page="AdminHeader.jsp"></jsp:include>
 
-	<jsp:include page="AdminSidebar.jsp"></jsp:include>
+<jsp:include page="AdminHeader.jsp"></jsp:include>
+<jsp:include page="AdminSidebar.jsp"></jsp:include>
 
-	<main id="main" class="main">
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>List State</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+                <li class="breadcrumb-item active">List State</li>
+            </ol>
+        </nav>
+    </div>
 
-		<div class="pagetitle">
-			<h1>State</h1>
-			<nav>
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">State</li>
-				</ol>
-			</nav>
-		</div>
-		<!-- End Page Title -->
+    <section class="section dashboard">
+        <div class="row" style="min-height: 500px;">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">State<span>/all</span></h5>
 
-		<section class="section dashboard">
-			<div class="row" style="min-height: 500px;">
+                        <table class="table datatable datatable-table table-hover" id="state">
+                            <thead>
+                                <tr>
+                                    <th>State Name</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${stateList}" var="s">
+                                    <tr>
+                                        <td>${s.stateName}</td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="viewstate?stateId=${s.stateId}" class="btn btn-sm btn-primary">View</a>
+                                                <a href="deletestate?stateId=${s.stateId}" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="editstate?stateId=${s.stateId}" class="btn btn-sm btn-warning">Edit</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
 
-				<!-- Left side columns -->
-				<div class="col-lg-12">
-					<div class="row">
-						<!-- Reports -->
-						<div class="col-12">
-							<div class="card">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
+<jsp:include page="AdminFooter.jsp"></jsp:include>
+<jsp:include page="AdminJs.jsp"></jsp:include>
 
-								<div class="card-body">
-									<h5 class="card-title">
-										State<span>/all</span>
-									</h5>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
 
-
-									<table class="table datatable datatable-table table-hover" id="state">
-										<thead>
-					                      <th>State Name</th>
-				                          <th>Actions</th>
-										</thead>
-
-										<tbody>
-											<c:forEach items="${stateList}" var="s">
-												<tr>
-						                            <td>${s.stateName}</td> 
-							             			<td> <a href="editstate?stateId=${s.stateId}">Edit</a>
-							             			 |<a href="deletestate?stateId=${s.stateId}">Delete</a>|
-													 <a href="viewstate?stateId=${s.stateId}">View</a>
-													 </td>
-												</tr>
-											</c:forEach>
-										</tbody>
-
-									</table>
-
-
-
-								</div>
-
-							</div>
-						</div>
-						<!-- End Reports -->
-
-					</div>
-				</div>
-				<!-- End Left side columns -->
-
-				<!-- Right side columns -->
-				<!-- End Right side columns -->
-
-			</div>
-		</section>
-
-	</main>
-	<!-- main content end  -->
-
-
-	<jsp:include page="AdminFooter.jsp"></jsp:include>
-
-	<jsp:include page="AdminJs.jsp"></jsp:include>
-	
-	
-
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
-
-	<script type="text/javascript">
-
-	$( document ).ready(function() {
-		let table = new DataTable('#state');
-	});
-	</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        let table = new DataTable('#state');
+    });
+</script>
 
 </body>
 </html>

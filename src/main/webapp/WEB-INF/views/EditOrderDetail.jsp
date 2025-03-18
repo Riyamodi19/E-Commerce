@@ -13,6 +13,13 @@
 <form action="updateorderdetail" method="post">
 Quantity: <input type="text" name="quantity" value="${orderDetail.quantity}"/><br><br>
 Price: <input type="text" name="price" value="${orderDetail.price}"/><br><br>
+OrderDetail Status : <select name="status" id="status" value="${orderdetail.status}" required>
+                <option value="">-- Select Status --</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Pending">Pending</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+            </select><br><br>
 <!--  Product Name:<select name="productId">
 			<option>Select Product Name</option>
 			
