@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -37,49 +36,50 @@
                     <div class="card-body">
                         <h5 class="card-title">Products<span>/all</span></h5>
 
-                        <table class="table datatable datatable-table table-hover" id="products">
-                            <thead>
-                                <tr>
-                                    <th>ProductName</th>
-							          <th>CategoryName</th>
-							          <th>SubCategoryName</th>
-							          <th>BasePrice</th>
-							          <th>OfferPrice</th>
-							          <th>OfferPercentage</th>
-							          <th>ProductDetail</th>
-							          <th>ProductImageURL1</th>
-							          <th>productImageURL2</th>
-							          <th>productImageURL3</th>
-							          <th>Quantity</th>
-							          <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${allProduct}" var="p">
+                        <div class="table-responsive">
+                            <table class="table datatable datatable-table table-hover" id="products">
+                                <thead>
                                     <tr>
-                                        <td>${p[10]}</td>
-										<td>${p[13]}</td>
-										<td>${p[14]}</td>
-										<td>${p[1]}</td>
-										<td>${p[5]}</td>
-										<td>${p[4]}</td>
-										<td>${p[6]}</td>
-										<td>${p[7]}</td>
-										<td>${p[8]}</td>
-										<td>${p[9]}</td>
-										<td>${p[11]}</td>
-
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="viewproduct?productId=${p[0]}" class="btn btn-sm btn-primary">View</a>
-                                                <a href="deleteproduct?productId=${p[0]}" class="btn btn-sm btn-danger">Delete</a>
-                                                <a href="editproduct?productId=${p[0]}" class="btn btn-sm btn-warning">Edit</a>
-                                            </div>
-                                        </td>
+                                        <th>ProductName</th>
+                                        <th>CategoryName</th>
+                                        <th>SubCategoryName</th>
+                                        <th>BasePrice</th>
+                                        <th>OfferPrice</th>
+                                        <th>OfferPercentage</th>
+                                        <th>ProductDetail</th>
+                                        <th>ProductImageURL1</th>
+                                        <th>productImageURL2</th>
+                                        <th>productImageURL3</th>
+                                        <th>Quantity</th>
+                                        <th>Action</th>
                                     </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${allProduct}" var="p">
+                                        <tr>
+                                            <td>${p[10]}</td>
+                                            <td>${p[13]}</td>
+                                            <td>${p[14]}</td>
+                                            <td>${p[1]}</td>
+                                            <td>${p[5]}</td>
+                                            <td>${p[4]}</td>
+                                            <td>${p[6]}</td>
+                                            <td>${p[7]}</td>
+                                            <td>${p[8]}</td>
+                                            <td>${p[9]}</td>
+                                            <td>${p[11]}</td>
+                                            <td>
+                                                <div class="d-flex gap-2">
+                                                    <a href="viewproduct?productId=${p[0]}" class="btn btn-sm btn-primary">View</a>
+                                                    <a href="deleteproduct?productId=${p[0]}" class="btn btn-sm btn-danger">Delete</a>
+                                                    <a href="editproduct?productId=${p[0]}" class="btn btn-sm btn-warning">Edit</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -12,14 +11,6 @@
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
 <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
-
-<!-- Custom Styles -->
-<style>
-    td:last-child {
-        white-space: nowrap; /* Prevent text wrapping in action column */
-    }
-</style>
-
 </head>
 <body>
 
@@ -44,47 +35,48 @@
                     <div class="card-body">
                         <h5 class="card-title">User Address<span>/all</span></h5>
 
-                        <table class="table datatable datatable-table table-hover" id="userAddress">
-                            <thead>
-                                <tr>
-                                    <th>FirstName</th>
-							          <th>LastName</th>
-							          <th>Title</th>
-							          <th>UnitName</th>
-							          <th>Street</th>
-							          <th>LandMark</th>
-							          <th>ZipCode</th>
-							          <th>CityName</th>
-							          <th>StateName</th>
-							          <th>AddressDetail</th>
-							          <th>Action</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${allUserAddress}" var="u">
+                        <div class="table-responsive">
+                            <table class="table datatable datatable-table table-hover" id="userAddress">
+                                <thead>
                                     <tr>
-                                         <td>${u[13]}</td>
-										    <td>${u[14]}</td>
-											<td>${u[6]}</td>
-											<td>${u[7]}</td>
-											<td>${u[5]}</td>
-											<td>${u[3]}</td>
-											<td>${u[9]}</td>
-											<td>${u[11]}</td>
-											<td>${u[12]}</td>
-											<td>${u[10]}</td>
-                                        <td>
-                                            <div class="d-flex gap-2">
-                                                <a href="viewuseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-primary">View</a>
-                                                <a href="deleteuseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-danger">Delete</a>
-                                                <a href="edituseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-warning">Edit</a>
-                                            </div>
-                                        </td>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Title</th>
+                                        <th>UnitName</th>
+                                        <th>Street</th>
+                                        <th>LandMark</th>
+                                        <th>ZipCode</th>
+                                        <th>CityName</th>
+                                        <th>StateName</th>
+                                        <th>AddressDetail</th>
+                                        <th>Action</th>
                                     </tr>
-                                </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${allUserAddress}" var="u">
+                                        <tr>
+                                            <td data-label="FirstName">${u[13]}</td>
+                                            <td data-label="LastName">${u[14]}</td>
+                                            <td data-label="Title">${u[6]}</td>
+                                            <td data-label="UnitName">${u[7]}</td>
+                                            <td data-label="Street">${u[5]}</td>
+                                            <td data-label="LandMark">${u[3]}</td>
+                                            <td data-label="ZipCode">${u[9]}</td>
+                                            <td data-label="CityName">${u[11]}</td>
+                                            <td data-label="StateName">${u[12]}</td>
+                                            <td data-label="AddressDetail">${u[10]}</td>
+                                            <td>
+                                                <div class="d-flex gap-2">
+                                                    <a href="viewuseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-primary">View</a>
+                                                    <a href="deleteuseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-danger">Delete</a>
+                                                    <a href="edituseraddress?userAddressId=${u[0]}" class="btn btn-sm btn-warning">Edit</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
