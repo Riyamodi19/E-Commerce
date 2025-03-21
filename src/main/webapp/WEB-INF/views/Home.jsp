@@ -13,8 +13,11 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>Home</title>
-
-
+    
+    <!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="ashion/css/bootstrap.min.css">
 
@@ -58,12 +61,18 @@ https://templatemo.com/tm-571-hexashop
                             <img src="ashion/images/ecommercelogo.png" height="100px" width="247px" >
                         </a>
                         <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
+                        <!-- ***** Menu Start ***** -->                       
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="home" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                            <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                            <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Menu</a>
+                                <ul>
+                                    <li class="scroll-to-section"><a href="#men">Men's</a></li>
+                                    <li class="scroll-to-section"><a href="#women">Women's</a></li>
+                                    <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                                </ul>
+                            </li>
+                            
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
@@ -84,12 +93,12 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                             <li class="nav-item dropdown pe-3" style="margin-left:100px;">
 								<img src="${user.profilePicPath}"  height="50px" width="50px" alt="Profile" class="rounded-circle" >
-								<span class="d-none d-md-block dropdown-toggle ps-2" style="margin-left:60px; margin-top:-40px;">${user.firstName}</span>   				
+								<span class="d-none d-md-block dropdown-toggle ps-2" style="margin-left:60px; margin-top:-40px;">${user.firstName}</span>  
+								 				
           					</li>
           					<!-- End Profile Iamge Icon -->
           					<!-- End Profile Iamge Icon -->
-          		
-                        </ul>        
+                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>

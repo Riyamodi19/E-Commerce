@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>products</title>
-
+    <!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="ashion/css/bootstrap.min.css">
@@ -62,9 +64,14 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="home" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                            <li class="scroll-to-section"><a href="#wommen">Women's</a></li>
-                            <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                             <li class="submenu">
+                                <a href="javascript:;">Menu</a>
+                                <ul>
+                                    <li class="scroll-to-section"><a href="#men">Men's</a></li>
+                                    <li class="scroll-to-section"><a href="#women">Women's</a></li>
+                                    <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
+                                </ul>
+                            </li>
                             <li class="submenu">
                                 <a href="javascript:;">Pages</a>
                                 <ul>
