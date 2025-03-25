@@ -118,7 +118,7 @@
               </select>
               <div class="input-group-text"><span class="bi bi-gender-ambiguous"></span></div>
             </div>
-            <div class="input-group mb-3">
+           <!--   <div class="input-group mb-3">
               <select class="form-control" name="role" required>
                 <option value="">Select Role</option>
                 <option value="USER" name="role">ADMIN</option>
@@ -126,7 +126,7 @@
                 <option value="SELLER" name="role">SELLER</option>
               </select>
               <div class="input-group-text"><span class="bi bi-person-badge"></span></div>
-            </div>
+            </div>-->
                    <div class="col-12">
                       <label for="profilePic" class="form-label">Profile Pic</label>
                       <div class="input-group has-validation">

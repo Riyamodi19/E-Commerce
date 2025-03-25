@@ -75,7 +75,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="ashion/images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="ashion/images/icons/marsh.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -189,7 +189,7 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="home">Home</a>
 					
 				</li>
 

@@ -70,7 +70,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="ashion/images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="ashion/images/icons/marsh.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->

@@ -144,13 +144,13 @@
             <input type="text" name="productDetail" id="productDetail" class="form-control" placeholder="Enter Product Details">
 
             <label class="form-label" for="productImageURL1">Product Image URL 1</label>
-            <input type="url" name="productImageURL1" id="productImageURL1" class="form-control" placeholder="Enter Image URL 1">
-
+            <input type="file" name="productImageURL1" id="productImageURL1" class="form-control" placeholder="Enter Image URL 1">
+                          
             <label class="form-label" for="productImageURL2">Product Image URL 2</label>
-            <input type="url" name="productImageURL2" id="productImageURL2" class="form-control" placeholder="Enter Image URL 2">
+            <input type="file" name="productImageURL2" id="productImageURL2" class="form-control" placeholder="Enter Image URL 2">
 
             <label class="form-label" for="productImageURL3">Product Image URL 3</label>
-            <input type="url" name="productImageURL3" id="productImageURL3" class="form-control" placeholder="Enter Image URL 3">
+            <input type="file" name="productImageURL3" id="productImageURL3" class="form-control" placeholder="Enter Image URL 3">
 
             <label class="form-label" for="quantity">Quantity</label>
             <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Enter Quantity" required>

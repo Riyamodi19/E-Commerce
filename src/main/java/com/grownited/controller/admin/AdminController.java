@@ -9,4 +9,9 @@ public class AdminController {
 	public String adminDashboard() {
 		return "AdminDashboard";
 	}
+	@GetMapping("userprofile")
+	public String userprofile() {
+		return "UserProfile";
+	}
+	
 }

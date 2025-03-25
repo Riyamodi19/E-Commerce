@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="ashion/images/icons/marsh.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -78,7 +79,6 @@
 						<ul class="main-menu">
 							<li>
 								<a href="home">Home</a>
-								
 							</li>
 
 							<li>
@@ -125,7 +125,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="home"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="home"><img src="ashion/images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -185,7 +185,9 @@
 			<ul class="main-menu-m">
 				<li>
 					<a href="home">Home</a>
-					
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
 				</li>
 
 				<li>
@@ -316,7 +318,7 @@
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="home" class="stext-109 cl8 hov-cl1 trans-04">
 				Home
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
@@ -496,7 +498,7 @@
 							<ul>
 								<li class="flex-w flex-t p-b-30">
 									<a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-										<img src="images/product-min-01.jpg" alt="PRODUCT">
+										<img src="ashion/images/product-min-01.jpg" alt="PRODUCT">
 									</a>
 
 									<div class="size-215 flex-col-t p-t-8">
@@ -512,7 +514,7 @@
 
 								<li class="flex-w flex-t p-b-30">
 									<a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-										<img src="images/product-min-02.jpg" alt="PRODUCT">
+										<img src="ashion/images/product-min-02.jpg" alt="PRODUCT">
 									</a>
 
 									<div class="size-215 flex-col-t p-t-8">
