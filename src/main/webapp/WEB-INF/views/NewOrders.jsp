@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Order</title>
-
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 

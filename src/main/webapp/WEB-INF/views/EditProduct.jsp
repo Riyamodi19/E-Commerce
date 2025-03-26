@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
-
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -65,7 +67,7 @@
     <div class="card shadow-lg">
         <h2 class="text-center mb-4">Edit Product</h2>
 
-        <form action="updateproduct" method="post">
+        <form action="updateproduct" method="post" enctype="multipart/form-data">
             <!-- Product Name -->
             <div class="mb-3">
                 <label class="form-label" for="productName">Product Name</label>
@@ -99,17 +101,20 @@
             <!-- Product Image URLs -->
             <div class="mb-3">
                 <label class="form-label" for="productImageURL1">Product Image URL 1</label>
-                <input type="url" name="productImageURL1" id="productImageURL1" class="form-control" value="${product.productImageURL1}" required>
+                <img src="${product.productImageURL1}" height="70px" width="70px">
+                <input type="file" name="productImage1" id="productImageURL1" class="form-control" value="${product.productImageURL1}" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="productImageURL2">Product Image URL 2</label>
-                <input type="url" name="productImageURL2" id="productImageURL2" class="form-control" value="${product.productImageURL2}" required>
+                 <img src="${product.productImageURL2}" height="70px" width="70px">
+                <input type="file" name="productImage2" id="productImageURL2" class="form-control" value="${product.productImageURL2}" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="productImageURL3">Product Image URL 3</label>
-                <input type="url" name="productImageURL3" id="productImageURL3" class="form-control" value="${product.productImageURL3}" required>
+                <img src="${product.productImageURL3}" height="70px" width="70px">              
+                <input type="file" name="productImage3" id="productImageURL3" class="form-control" value="${product.productImageURL3}" required>
             </div>
 
             <!-- Quantity -->

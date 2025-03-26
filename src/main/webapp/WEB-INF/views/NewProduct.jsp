@@ -6,7 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Product</title>
-
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -106,7 +108,7 @@
     <div class="form-container">
         <h2>Add Product</h2>
 
-        <form action="saveproduct" method="post">
+        <form action="saveproduct" method="post" enctype="multipart/form-data">
 
             <!-- Product Fields -->
             <label class="form-label" for="productName">Product Name</label>
@@ -144,13 +146,13 @@
             <input type="text" name="productDetail" id="productDetail" class="form-control" placeholder="Enter Product Details">
 
             <label class="form-label" for="productImageURL1">Product Image URL 1</label>
-            <input type="file" name="productImageURL1" id="productImageURL1" class="form-control" placeholder="Enter Image URL 1">
+            <input type="file" name="productImage1" id="productImageURL1" class="form-control" placeholder="Enter Image URL 1">
                           
             <label class="form-label" for="productImageURL2">Product Image URL 2</label>
-            <input type="file" name="productImageURL2" id="productImageURL2" class="form-control" placeholder="Enter Image URL 2">
+            <input type="file" name="productImage2" id="productImageURL2" class="form-control" placeholder="Enter Image URL 2">
 
             <label class="form-label" for="productImageURL3">Product Image URL 3</label>
-            <input type="file" name="productImageURL3" id="productImageURL3" class="form-control" placeholder="Enter Image URL 3">
+            <input type="file" name="productImage3" id="productImageURL3" class="form-control" placeholder="Enter Image URL 3">
 
             <label class="form-label" for="quantity">Quantity</label>
             <input type="number" name="quantity" id="quantity" class="form-control" placeholder="Enter Quantity" required>

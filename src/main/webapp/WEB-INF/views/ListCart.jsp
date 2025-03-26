@@ -8,7 +8,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>List Cart</title>
 
-<jsp:include page="AdminCss.jsp"></jsp:include>
+ <jsp:include page="AdminCss.jsp"></jsp:include>
+ 
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 

@@ -1,9 +1,11 @@
 package com.grownited.controller;
 
+import java.io.IOException;
+
 import java.util.Date;
 
 import java.util.List;
-
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.ProductEntity;
 import com.grownited.entity.SubCategoryEntity;
@@ -30,6 +36,9 @@ public class ProductController {
 	@Autowired
 	SubCategoryRepository repoSubCategory;
 	
+	@Autowired
+	Cloudinary cloudinary;
+	
 	@GetMapping("newproduct")
 	public String newProduct(Model model) {
 		 List<CategoryEntity> allCategory = repoCategory.findAll();
@@ -41,7 +50,30 @@ public class ProductController {
 		return "NewProduct";
 	}
 	@PostMapping("saveproduct")
-	public String saveProduct(ProductEntity productEntity) {
+	public String saveProduct(ProductEntity productEntity ,@RequestParam("productImage1") MultipartFile productImage1 ,@RequestParam("productImage2") MultipartFile productImage2,@RequestParam("productImage3") MultipartFile productImage3) {
+		System.out.println(productImage1.getOriginalFilename());// file name
+		System.out.println(productImage2.getOriginalFilename());// file name
+		System.out.println(productImage3.getOriginalFilename());// file name
+		
+		try {
+			Map result = cloudinary.uploader().upload(productImage1.getBytes(), ObjectUtils.emptyMap());
+			System.out.println(result);
+			System.out.println(result.get("url"));
+			productEntity.setProductImageURL1(result.get("url").toString());
+			
+			Map result1 = cloudinary.uploader().upload(productImage2.getBytes(), ObjectUtils.emptyMap());
+			System.out.println(result1);
+			System.out.println(result1.get("url"));
+			productEntity.setProductImageURL2(result1.get("url").toString());
+			
+			Map result2 = cloudinary.uploader().upload(productImage3.getBytes(), ObjectUtils.emptyMap());
+			System.out.println(result2);
+			System.out.println(result2.get("url"));
+			productEntity.setProductImageURL3(result2.get("url").toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(productEntity.getProductName());
 		System.out.println(productEntity.getBasePrice());
 		System.out.println(productEntity.getOfferPrice());
@@ -114,11 +146,40 @@ public class ProductController {
 		//update product
 
 		@PostMapping("updateproduct")
-		public String updateProduct(ProductEntity productEntity) {//pcode vhreg type vid 
+		public String updateProduct(ProductEntity productEntity ,@RequestParam("productImage1") MultipartFile productImage1 ,@RequestParam("productImage2") MultipartFile productImage2,@RequestParam("productImage3") MultipartFile productImage3) {//pcode vhreg type vid 
 			
 			System.out.println(productEntity.getProductId());//id? db? 
+			System.out.println(productEntity.getProductImageURL1());//id? db? 
+			System.out.println(productEntity.getProductImageURL2());//id? db? 
+			System.out.println(productEntity.getProductImageURL3());//id? db? 
+			
 
 			Optional<ProductEntity> op = repoProduct.findById(productEntity.getProductId());
+			
+			System.out.println(productImage1.getOriginalFilename());// file name
+			System.out.println(productImage2.getOriginalFilename());// file name
+			System.out.println(productImage3.getOriginalFilename());// file name
+			
+			try {
+				Map result = cloudinary.uploader().upload(productImage1.getBytes(), ObjectUtils.emptyMap());
+				System.out.println(result);
+				System.out.println(result.get("url"));
+				productEntity.setProductImageURL1(result.get("url").toString());
+				
+				Map result1 = cloudinary.uploader().upload(productImage2.getBytes(), ObjectUtils.emptyMap());
+				System.out.println(result1);
+				System.out.println(result1.get("url"));
+				productEntity.setProductImageURL2(result1.get("url").toString());
+				
+				Map result2 = cloudinary.uploader().upload(productImage3.getBytes(), ObjectUtils.emptyMap());
+				System.out.println(result2);
+				System.out.println(result2.get("url"));
+				productEntity.setProductImageURL3(result2.get("url").toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			  
 			
 			if(op.isPresent())
 			{

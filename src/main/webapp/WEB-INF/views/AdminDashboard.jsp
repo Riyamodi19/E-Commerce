@@ -8,6 +8,10 @@
 
 <title>Admin Dashboard</title>
 
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 

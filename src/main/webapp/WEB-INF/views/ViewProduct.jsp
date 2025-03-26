@@ -7,7 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Product</title>
-
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -77,9 +79,9 @@
 						<td>${p[5]}</td>
 						<td>${p[4]}</td>
 						<td>${p[6]}</td>
-						<td>${p[7]}</td>
-						<td>${p[8]}</td>
-						<td>${p[9]}</td>
+                        <td><img src="${p[7]}" height="100px" width="100px"></td>
+                        <td><img src="${p[8]}" height="100px" width="100px"></td>
+                        <td><img src="${p[9]}" height="100px" width="100px"></td>
 						<td>${p[11]}</td>
 
                     </tr>

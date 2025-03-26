@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>List Area</title>
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 </head>
 <body>
 <h2>List Area</h2>

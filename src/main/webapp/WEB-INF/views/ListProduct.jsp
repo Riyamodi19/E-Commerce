@@ -9,6 +9,9 @@
 <title>List Products</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
+<!-- Favicons -->
+<link href="assets/img/logo_uni.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 
@@ -64,11 +67,11 @@
                                             <td>${p[5]}</td>
                                             <td>${p[4]}</td>
                                             <td>${p[6]}</td>
-                                            <td>${p[7]}</td>
-                                            <td>${p[8]}</td>
-                                            <td>${p[9]}</td>
-                                            <td>${p[11]}</td>
-                                            <td>
+                                            <td><img src="${p[7]}" height="100px" width="100px"></td>
+											<td><img src="${p[8]}" height="100px" width="100px"></td>
+											<td><img src="${p[9]}" height="100px" width="100px"></td>
+											<td>${p[11]}</td>  
+											<td>                                         
                                                 <div class="d-flex gap-2">
                                                     <a href="viewproduct?productId=${p[0]}" class="btn btn-sm btn-primary">View</a>
                                                     <a href="deleteproduct?productId=${p[0]}" class="btn btn-sm btn-danger">Delete</a>
