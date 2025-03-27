@@ -41,15 +41,15 @@
   ======================================================== -->
 </head>
 
-<body>
+<body style="background: #E5E8E9;">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center" style="background: #8193AA;">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo_uni.png" alt="">
-        <span class="d-none d-lg-block">E_Commerce</span>
+      <a href="home" class="logo d-flex align-items-center">
+        <img src="ashion/images/icons/marsh.png" alt="">
+        <span class="d-none d-lg-block">MRSH Ashion</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -273,8 +273,8 @@
 
   <!-- ======= Sidebar ======= -->
   
-<aside id="sidebar" class="sidebar">
-	<ul class="sidebar-nav" id="sidebar-nav">
+<aside id="sidebar" class="sidebar" style="background: #E5E8E9;">
+	<ul class="sidebar-nav" id="sidebar-nav" style="background: #A3B8D0;">
 
 		<li class="nav-item">
 			<a class="nav-link" href="admindashboard">
@@ -450,8 +450,8 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-          <li class="breadcrumb-item">Users</li>
-          <li class="breadcrumb-item active">Profile</li>
+          <li class="breadcrumb-item"><a href="listuser">Users</a></li>
+          <li class="breadcrumb-item active"><a href="userprofile">Profile</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -508,7 +508,7 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">${user.firstName}</div>
+                    <div class="col-lg-9 col-md-8">${user.firstName}&nbsp;${user.lastName}</div>
                   </div>
 
                   <div class="row">
@@ -541,7 +541,7 @@
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="${user.firstName}">
+                        <input name="fullName" type="text" class="form-control" id="fullName" value="${user.firstName}&nbsp;${user.lastName}">
                       </div>
                     </div>
 
@@ -680,9 +680,9 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+  <footer id="footer" class="footer" style="background: #E5E8E9;">
     <div class="copyright">
-      &copy; Copyright <strong><span>E_Commerce</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>MRSH</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->

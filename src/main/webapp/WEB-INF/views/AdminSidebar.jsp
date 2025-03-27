@@ -1,7 +1,5 @@
-
-<aside id="sidebar" class="sidebar">
-	<ul class="sidebar-nav" id="sidebar-nav">
-
+<aside id="sidebar" class="sidebar" style="background: #E5E8E9;">
+	<ul class="sidebar-nav" id="sidebar-nav" style="background: #A3B8D0;">
 		<li class="nav-item">
 			<a class="nav-link" href="admindashboard">
 				<i class="bi bi-grid"></i> <span>Admin Dashboard</span>

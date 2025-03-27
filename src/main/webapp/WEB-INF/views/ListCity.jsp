@@ -23,7 +23,7 @@
 </style>
 
 </head>
-<body>
+<body style="background: #E5E8E9;">
 
 <jsp:include page="AdminHeader.jsp"></jsp:include>
 <jsp:include page="AdminSidebar.jsp"></jsp:include>

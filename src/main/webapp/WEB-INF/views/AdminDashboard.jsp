@@ -9,7 +9,7 @@
 <title>Admin Dashboard</title>
 
 <!-- Favicons -->
-<link href="assets/img/logo_uni.png" rel="icon">
+<link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
@@ -17,7 +17,7 @@
 
 
 </head>
-<body>
+<body style="background: #E5E8E9;">
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
 
 	<jsp:include page="AdminSidebar.jsp"></jsp:include>
@@ -28,7 +28,7 @@
 			<h1>Admin Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="home">Home</a></li>
 					<li class="breadcrumb-item active">Dashboard</li>
 				</ol>
 			</nav>

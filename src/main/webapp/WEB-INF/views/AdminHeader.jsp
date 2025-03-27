@@ -1,11 +1,11 @@
 
 
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center" style="background: #8193AA;">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="admindashboard" class="logo d-flex align-items-center">
-        <img src="assets/img/logo_uni.png" alt="">
-        <span class="d-none d-lg-block">E_Commerce</span>
+      <a href="home" class="logo d-flex align-items-center">
+        <img src="ashion/images/icons/marsh.png" alt="">
+        <span class="d-none d-lg-block">MRSH Ashion</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>

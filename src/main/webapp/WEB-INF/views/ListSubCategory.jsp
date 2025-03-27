@@ -17,7 +17,7 @@
 <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 
 </head>
-<body>
+<body style="background: #E5E8E9;">
 
 <jsp:include page="AdminHeader.jsp"></jsp:include>
 <jsp:include page="AdminSidebar.jsp"></jsp:include>

@@ -62,7 +62,7 @@
     </style>
 </head>
 
-<body>
+<body style="background: #D6DFE9;">
 
 <div class="container mt-5">
     <div class="card shadow-lg">
