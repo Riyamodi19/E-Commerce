@@ -8,7 +8,7 @@
   <title>Login</title>
   <jsp:include page="AdminCss.jsp"></jsp:include>
   <!-- Favicons -->
-<link href="assets/img/logo_uni.png" rel="icon">
+<link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
   <meta content="" name="description">
@@ -46,8 +46,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo_uni.png" alt="">
-                  <span class="d-none d-lg-block">E_Commerce</span>
+                  <img src="ashion/images/icons/marsh.png" alt="">
+                  <span class="d-none d-lg-block">MRSH Ashion</span>
                 </a>
               </div><!-- End Logo -->
 

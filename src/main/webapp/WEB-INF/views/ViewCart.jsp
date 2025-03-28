@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Cart</title>
 <!-- Favicons -->
-<link href="assets/img/logo_uni.png" rel="icon">
+<link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"><jsp:include page="AdminCss.jsp"></jsp:include>
     
     <!-- Bootstrap CSS -->

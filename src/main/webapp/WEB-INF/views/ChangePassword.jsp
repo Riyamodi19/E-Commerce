@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Change Password</title>
     <!-- Favicons -->
-<link href="assets/img/logo_uni.png" rel="icon">
+<link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     
     <!-- Google Fonts -->

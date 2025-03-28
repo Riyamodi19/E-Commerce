@@ -9,7 +9,7 @@
 <title>List UserAddress</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include><!-- Favicons -->
-<link href="assets/img/logo_uni.png" rel="icon">
+<link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 
