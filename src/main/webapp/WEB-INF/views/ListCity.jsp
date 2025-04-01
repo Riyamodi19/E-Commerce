@@ -16,11 +16,11 @@
 <link href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 
 <!-- Custom Styles -->
-<style>
+<!-- <style>
     td:last-child {
         white-space: nowrap; /* Prevent text wrapping in action column */
     }
-</style>
+</style> -->
 
 </head>
 <body style="background: #E5E8E9;">

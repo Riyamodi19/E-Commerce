@@ -1,4 +1,5 @@
 package com.grownited.entity;
+import java.time.LocalDate;
 import java.util.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,7 +26,7 @@ private String confirmPassword;
 private	String contactNum;
 private	String gender;
 private	String role;//member,security,chairman,admin
-private Date createdAt;
+private LocalDate createdAt;
 private Integer status; //active or disabled
 private String otp; 
 private String profilePicPath;
@@ -56,10 +57,10 @@ public void setUserId(Integer userId) {
 	this.userId = userId;
 }
 
-public Date getCreatedAt() {
+public LocalDate getCreatedAt() {
 	return createdAt;
 }
-public void setCreatedAt(Date createdAt) {
+public void setCreatedAt(LocalDate createdAt) {
 	this.createdAt = createdAt;
 }
 public String getFirstName() {

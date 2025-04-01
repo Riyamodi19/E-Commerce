@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -74,7 +75,8 @@ public class SessionController{
 		//bcrypt singleton -> single object -> autowired
 		
     	userEntity.setRole("BUYER");
-    	userEntity.setCreatedAt(new Date());
+    	LocalDate todaydate=LocalDate.now();
+		userEntity.setCreatedAt(todaydate);
     	
     
     	//read
