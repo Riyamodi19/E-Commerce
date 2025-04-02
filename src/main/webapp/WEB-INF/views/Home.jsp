@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -118,9 +118,10 @@
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="${totalWishlist}">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
+						
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
 							
@@ -836,7 +837,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="${p.productImageURL1}" alt="IMG-PRODUCT">
 
-							<a href="userviewproduct?productId=${p.productId}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+							<a href="userviewproduct?productId=${p.productId}" class="myProduct block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								Quick View
 							</a>
 						</div>
@@ -856,20 +857,88 @@
 							</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+								<a href="addtowishlist/${p.productId}"class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="ashion/images/icons/icon-heart-01.png" alt="ICON">
 									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="ashion/images/icons/icon-heart-02.png" alt="ICON">
 								</a>
 							</div>
 						</div>
 					</div>
-				</div>
-				</c:forEach>
-				
+					</div>
+					
+					<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="${p.productImageURL2}" alt="IMG-PRODUCT">
 
+							<a href="userviewproduct?productId=${p.productId}" class="myProduct block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="productdetail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									${p.productName }
+								</a>
+
+								<span class="stext-105 cl3">
+									<s>${p.basePrice }</s>
+								</span>
+								<span class="stext-105 cl3">
+									${p.offerPrice } <sub>${p.offerPercentage}%</sub>
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="addtowishlist/${p.productId}"class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="ashion/images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="ashion/images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="${p.productImageURL3}" alt="IMG-PRODUCT">
+
+							<a href="userviewproduct?productId=${p.productId}" class="myProduct block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1 ">
+								Quick View
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="productdetail" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									${p.productName }
+								</a>
+
+								<span class="stext-105 cl3">
+									<s>${p.basePrice }</s>
+								</span>
+								<span class="stext-105 cl3">
+									${p.offerPrice } <sub>${p.offerPercentage}%</sub>
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="addtowishlist/${p.productId}"class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="ashion/images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="ashion/images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					  </div>
+		             </div>
+			
+				</c:forEach>
+				 	</div>
 				 
-				 
-			            
+	            
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
@@ -1240,22 +1309,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 		$('.js-addwish-b2').each(function(){
 			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			//var productId =  $(this).parent().parent().find('.myProduct').attr("")
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "is Added to wishlist !", "success");
 
 				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
+			//	$(this).off('click');
+			
+				 $.ajax({
+				        url: $(this).attr('href'),
+				        success: function(response) {
+				        	setTimeout(function(){
+				        		window.location.reload();
+				        	},3000);
+				        }
+				    });
+					   
 			});
 		});
 
 		$('.js-addwish-detail').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
+		
+			
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+ 				swal(nameProduct, "is added to Wishlist !", "success");
 
 				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
+				//$(this).off('click');
 			});
 		});
 
@@ -1288,6 +1370,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="ashion/js/main.js"></script>
+
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 package com.grownited.entity;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +16,7 @@ public class WishlistEntity {
 	private Integer wishlistId;
 	private Integer userId;
 	private Integer productId;
-	private Date createdAt;
+	private LocalDate createdAt;
 	
 	public Integer getWishlistId() {
 		return wishlistId;
@@ -37,12 +36,13 @@ public class WishlistEntity {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
-	public Date getCreatedAt() {
+	public LocalDate getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(LocalDate createdAt) {
 		this.createdAt = createdAt;
-	}	
+	}
+	
 	
 	
 }

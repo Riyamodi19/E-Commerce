@@ -50,8 +50,8 @@
 						          <th>Street</th>
 						          <th>LandMark</th>
 						          <th>ZipCode</th>
-						          <th>CityName</th>
 						          <th>StateName</th>
+						          <th>CityName</th>
 						          <th>AddresDetail</th>
 			
                               </tr>
@@ -59,15 +59,15 @@
                             <tbody>
 					                <c:forEach items="${useraddress}" var="u">
 				                    <tr>
-				                       <td>${u[13]}</td>
-									    <td>${u[14]}</td>
+				                       <td>${u[11]}</td>
+									    <td>${u[12]}</td>
 										<td>${u[6]}</td>
 										<td>${u[7]}</td>
 										<td>${u[5]}</td>
 										<td>${u[3]}</td>
 										<td>${u[9]}</td>
-										<td>${u[11]}</td>
-										<td>${u[12]}</td>
+								        <td>${u[14]}</td>
+										<td>${u[13]}</td>
 										<td>${u[10]}</td>
 				
 				                    </tr>

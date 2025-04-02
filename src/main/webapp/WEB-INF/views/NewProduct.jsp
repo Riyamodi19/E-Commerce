@@ -101,6 +101,9 @@
             text-decoration: underline;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -115,22 +118,21 @@
             <input type="text" name="productName" id="productName" class="form-control" placeholder="Enter Product Name" required>
 
             
-            <!-- Category Selection -->
+           <!-- Category Selection -->
             <label class="form-label" for="categoryId">Select Category</label>
-            <select name="categoryId" id="categoryId" class="form-select" required>
-                <option value="">-- Select Category --</option>
-                <c:forEach items="${allCategory}" var="c">
-                    <option value="${c.categoryId}">${c.categoryName}</option>
+            
+            <select name="categoryId" id="categoryId" class="form-select" required onchange="getSubCategory()">
+                <option value="-1">-- Select Category --</option>
+                <c:forEach items="${allCategory}" var="s">
+                    <option value="${s.categoryId}">${s.categoryName}</option>
                 </c:forEach>
             </select>
 
             <!-- SubCategory Selection -->
             <label class="form-label" for="subCategoryId">Select Sub Category</label>
             <select name="subCategoryId" id="subCategoryId" class="form-select" required>
-                <option value="">-- Select SubCategory --</option>
-                <c:forEach items="${allSubCategory}" var="s">
-                    <option value="${s.subCategoryId}">${s.subCategoryName}</option>
-                </c:forEach>
+                <option value="-1">-- Select SubCategory --</option>
+                
             </select>
             
             <label class="form-label" for="basePrice">Base Price</label>
@@ -169,6 +171,35 @@
         </div>
     </div>
 
+     <script type="text/javascript">
+
+	function getSubCategory(){
+		console.log("category Change");
+		let categoryId = document.getElementById("categoryId").value;
+		console.log(categoryId);	
+		//url -> json REST 
+		
+		  $.get( "getallsubcategorybycategoryid/"+categoryId, function() {
+			})
+			  .done(function(data) {
+			    console.log(data);
+			    //fill the subcategory 
+			    $('#subCategoryId').empty().append('<option selected="selected" value="-1">-- Select SubCategory --</option>')
+			    
+			    for (var i = 0; i < data.length; i++) {
+      			  $('#subCategoryId').append('<option value="' + data[i].subCategoryId + '">' + data[i].subCategoryName + '</option>');
+   				 }
+			    
+			  })
+			  .fail(function() {
+			    alert( "error" );
+			  })
+			  
+		
+	}
+
+
+</script> 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

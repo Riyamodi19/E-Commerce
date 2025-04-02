@@ -49,8 +49,8 @@
                                         <th>Street</th>
                                         <th>LandMark</th>
                                         <th>ZipCode</th>
-                                        <th>CityName</th>
                                         <th>StateName</th>
+                                        <th>CityName</th>
                                         <th>AddressDetail</th>
                                         <th>Action</th>
                                     </tr>
@@ -58,15 +58,15 @@
                                 <tbody>
                                     <c:forEach items="${allUserAddress}" var="u">
                                         <tr>
-                                            <td data-label="FirstName">${u[13]}</td>
-                                            <td data-label="LastName">${u[14]}</td>
+                                            <td data-label="FirstName">${u[11]}</td>
+                                            <td data-label="LastName">${u[12]}</td>
                                             <td data-label="Title">${u[6]}</td>
                                             <td data-label="UnitName">${u[7]}</td>
                                             <td data-label="Street">${u[5]}</td>
                                             <td data-label="LandMark">${u[3]}</td>
                                             <td data-label="ZipCode">${u[9]}</td>
-                                            <td data-label="CityName">${u[11]}</td>
-                                            <td data-label="StateName">${u[12]}</td>
+                                            <td data-label="CityName">${u[14]}</td>
+                                            <td data-label="StateName">${u[13]}</td>
                                             <td data-label="AddressDetail">${u[10]}</td>
                                             <td>
                                                 <div class="d-flex gap-2">

@@ -147,23 +147,22 @@
             <label class="form-label" for="zipCode">Zip Code</label>
             <input type="number" name="zipCode" id="zipCode" class="form-control" placeholder="6-digit Zip Code" required>
 
-            <!-- City Selection -->
-            <label class="form-label" for="cityId">City</label>
-            <select name="cityId" id="cityId" class="form-select" required>
-                <option value="">Select City</option>
-                <c:forEach items="${allCity}" var="c">
-                    <option value="${c.cityId}">${c.cityName}</option>
-                </c:forEach>
-            </select>
-            
               <!-- State Selection -->
             <label class="form-label" for="stateId">State</label>
-            <select name="stateId" id="stateId" class="form-select" required>
-                <option value="">Select State</option>
+            <select name="stateId" id="stateId" class="form-select" required onchange="getCity()">
+                <option value="-1">---Select State---</option>
                 <c:forEach items="${allState}" var="s">
                     <option value="${s.stateId}">${s.stateName}</option>
                 </c:forEach>
             </select>
+            
+            <!-- City Selection -->
+            <label class="form-label" for="cityId">City</label>
+            <select name="cityId" id="cityId" class="form-select" required >
+                <option value="-1">---Select City---</option>
+            </select>
+            
+             
             <!-- Submit Button -->
             <button type="submit" class="btn-submit">Save Address</button>
         </form>
@@ -173,6 +172,37 @@
             <a href="login">← Back to Login</a>
         </div>
     </div>
+    
+    
+    <script type="text/javascript">
+
+	function getState(){
+		console.log("state Change");
+		let stateId = document.getElementById("stateId").value;
+		console.log(stateId);	
+		//url -> json REST 
+		
+		  $.get( "getallcitybystateid/"+stateId, function() {
+			})
+			  .done(function(data) {
+			    console.log(data);
+			    //fill the city
+			    $('#cityId').empty().append('<option selected="selected" value="-1">-- Select City --</option>')
+			    
+			    for (var i = 0; i < data.length; i++) {
+      			  $('#cityId').append('<option value="' + data[i].cityId + '">' + data[i].cityName + '</option>');
+   				 }
+			    
+			  })
+			  .fail(function() {
+			    alert( "error" );
+			  })
+			  
+		
+	}
+
+
+</script> 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
