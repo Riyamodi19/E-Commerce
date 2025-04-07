@@ -31,6 +31,7 @@ public class AdminController {
 		//select count(*) from users; 
 				Long totalUsers = repoUser.count();//total of users table 
 				Long totalProduct = repoProduct.count();//total of product table 
+				Long totalOrders = repoOrders.count();//total of order table 
 				
 				//select * from users where role = 'USER'; 
 				Integer totalBuyer =repoUser.findByRole("BUYER").size();
@@ -42,11 +43,20 @@ public class AdminController {
 				Integer thisMonthBuyerCount = repoUser.countThisMonthBuyer(month);
 				Integer thisMonthOrdersCount = repoOrders.countThisMonthOrders(month);
 				
+				Integer monthWiseBuyers [] = new Integer[12];
+				
+				for(int i=1;i<=12;i++) {
+					monthWiseBuyers [i-1] = repoUser.countMonthwiseBuyers(i);
+				}
+				
 				model.addAttribute("totalBuyer",totalBuyer);
 				//model.addAttribute("totalOrders",totalOrders);
 				model.addAttribute("thisMonthBuyerCount",thisMonthBuyerCount);
 				model.addAttribute("thisMonthOrdersCount",thisMonthOrdersCount);
 				model.addAttribute("totalProduct", totalProduct);
+				
+				model.addAttribute("monthWiseBuyers",monthWiseBuyers);
+				System.out.println("monthwisebuyer"+monthWiseBuyers);
 		         
 		return "AdminDashboard";
 	}

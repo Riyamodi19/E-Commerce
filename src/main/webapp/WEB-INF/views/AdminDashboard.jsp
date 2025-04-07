@@ -14,6 +14,7 @@
 
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </head>
@@ -231,9 +232,11 @@
 										Reports <span>/Today</span>
 									</h5>
 
-					<br><br>
-					<br><br>
-					
+					   <div class="row">
+			                          <div class="col-lg-12">
+				                       <canvas id="myBarChart"></canvas>
+                                      </div>
+		                        </div>
 
 								</div>
 
@@ -250,7 +253,52 @@
 
 	</main>
 	<!-- main content end  -->
+    
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>   -->
+ 
+	
+      <script>
+        // Get canvas element
+        const ctx = document.getElementById('myBarChart').getContext('2d');
 
+        // Create Bar Chart
+        const myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June','July'],
+                datasets: [{
+                    label: 'Buyers Count Month wise',
+                    //data:[1,2,3,4,5,6,7],
+                    data: [${monthWiseBuyers[0]},${monthWiseBuyers[1]},${monthWiseBuyers[2]},${monthWiseBuyers[3]},${monthWiseBuyers[4]},${monthWiseBuyers[5]},${monthWiseBuyers[6]}],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 
 	<jsp:include page="AdminFooter.jsp"></jsp:include>
 

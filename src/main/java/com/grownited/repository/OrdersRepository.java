@@ -17,7 +17,7 @@ public interface OrdersRepository extends JpaRepository<OrdersEntity, Integer>{
    @Query(value = "select o.*, u.first_name, u.last_name from orders o, users u where o.user_id = u.user_id  and o.order_id = :orderId", nativeQuery = true)
 	 List<Object[]> getByOrderId(Integer orderId);
 	 
-		@Query(nativeQuery = true,value=" select count(*)  from users where month(created_at) = :month and role = 'BUYER'")
+		@Query(nativeQuery = true,value=" select count(*)  from orders where month(created_at) = :month")
 		Integer countThisMonthOrders(Integer month);
 
 }

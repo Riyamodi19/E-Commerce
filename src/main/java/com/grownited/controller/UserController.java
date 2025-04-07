@@ -43,7 +43,9 @@ public class UserController {
 		return "ShopingCart";
 	}
 	@GetMapping("productdetail")
-	public String productDetail() {
+	public String productDetail(Model model, Integer productId) {
+		List<Object[]> products = repoProduct.getByProductId(productId);;
+		model.addAttribute("products",products);
 		return "ProductDetail";
 	}
 	@GetMapping("blog")

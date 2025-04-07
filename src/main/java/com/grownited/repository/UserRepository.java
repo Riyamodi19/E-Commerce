@@ -19,4 +19,7 @@ List<UserEntity> findByRole(String role);
 	
 	@Query(nativeQuery = true,value=" select count(*)  from users where month(created_at) = :month and role = 'BUYER'")
 	Integer countThisMonthBuyer(Integer month);
+	
+	@Query(nativeQuery = true, value="select count(*) from users where month(created_at) = :month and role='BUYER'")
+	Integer countMonthwiseBuyers(Integer month);
 }

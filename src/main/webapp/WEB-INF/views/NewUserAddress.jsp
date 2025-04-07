@@ -114,6 +114,11 @@
             return true;
         }
     </script>
+    
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
+	
 </head>
 
 <body>
@@ -176,7 +181,7 @@
     
     <script type="text/javascript">
 
-	function getState(){
+	function getCity(){
 		console.log("state Change");
 		let stateId = document.getElementById("stateId").value;
 		console.log(stateId);	
@@ -186,7 +191,7 @@
 			})
 			  .done(function(data) {
 			    console.log(data);
-			    //fill the city
+			    //fill the city 
 			    $('#cityId').empty().append('<option selected="selected" value="-1">-- Select City --</option>')
 			    
 			    for (var i = 0; i < data.length; i++) {
@@ -201,6 +206,8 @@
 		
 	}
 
+
+</script> 
 
 </script> 
 

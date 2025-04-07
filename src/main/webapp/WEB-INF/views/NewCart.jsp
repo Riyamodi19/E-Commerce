@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Add to Cart</title>
+        <jsp:include page="AdminCss.jsp"></jsp:include>
+    
       <!-- Favicons -->
 <link href="ashion/images/icons/marsh.png" rel="icon">
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">    
@@ -15,7 +17,7 @@
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS for Form (Same as Area Form) -->
+     <!-- Custom CSS for Form (Same as Area Form) -->
     <style>
         * {
             margin: 0;
@@ -73,7 +75,7 @@
         .btn-submit {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #0357AF, #0180CC);
             color: white;
             font-weight: 600;
             border: none;
@@ -82,7 +84,7 @@
         }
 
         .btn-submit:hover {
-            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            background: linear-gradient(135deg, #024A96, #0172B8);
         }
 
         .back-link {
@@ -101,9 +103,9 @@
         }
     </style>
 </head>
-
-<body>
-
+<body style="background: #E5E8E9;">
+<jsp:include page="AdminHeader.jsp"></jsp:include>
+<jsp:include page="AdminSidebar.jsp"></jsp:include>
     <div class="form-container">
         <h2>Add to Cart</h2>
 
@@ -129,12 +131,11 @@
 
         <!-- Back to Login Link -->
         <div class="back-link">
-            <a href="login">← Back to Login</a>
+            <a href="listcart">← Back</a>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+   
 </body>
 </html>
