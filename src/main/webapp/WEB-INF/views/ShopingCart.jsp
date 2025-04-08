@@ -331,6 +331,7 @@
 	<!-- Shoping Cart -->
 	<form class="bg0 p-t-75 p-b-85">
 		<div class="container">
+		<c:foreach var = "product" items="${products}">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
@@ -489,11 +490,12 @@
 						</div>
 
 						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
+							<a href = "checkout">Proceed to Checkout</a>
 						</button>
 					</div>
 				</div>
 			</div>
+			</c:foreach>
 		</div>
 	</form>
 		

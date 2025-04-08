@@ -38,6 +38,29 @@ public class CartController {
 	 model.addAttribute("allUser",allUser);
 	return "NewCart";
 	}
+ 
+ @GetMapping("addtocart")
+ public String addToCart(Integer productId , HttpSession session) {
+		
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		ProductEntity product = repoProduct.findById(productId).get();	
+		CartEntity cart = new CartEntity();
+		cart.setProductId(productId);
+		cart.setUserId(user.getUserId());
+		
+		repoCart.save(cart);
+		
+	    return "redirect:/shopingcart";
+	}
+
+ @GetMapping("shopingcart")
+	public String shopingCart(HttpSession session,Model model) {
+   UserEntity user = (UserEntity) session.getAttribute("user");
+   List<Object[]> products = repoCart.getAllProductsFromCart(user.getUserId());
+   model.addAttribute("products",products);
+	return "ShopingCart";
+}
+ 
 @PostMapping("savecart")
 public String saveCart(CartEntity cartEntity, HttpSession session) {
 	System.out.println(cartEntity.getQuantity());
