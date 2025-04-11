@@ -217,7 +217,7 @@ public class SessionController{
     @GetMapping("edituser")
     public String editUser(Integer userId,Model model) {
     	Optional<UserEntity> op = repoUser.findById(userId);
-    	if (op.isEmpty()) {
+    	if (!op.isPresent()) {
     		return "redirect:/listuser";
     	} else {
     		model.addAttribute("users",op.get());

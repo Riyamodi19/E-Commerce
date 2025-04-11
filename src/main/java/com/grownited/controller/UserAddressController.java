@@ -107,7 +107,7 @@ public class UserAddressController {
 		@GetMapping("edituseraddress")
 		public String editUserAddress(Integer userAddressId,Model model) {
 			Optional<UserAddressEntity> op = repoUserAddress.findById(userAddressId);
-			if (op.isEmpty()) {
+			if (!op.isPresent()) {
 				return "redirect:/listuseraddress";
 				
 			} else {

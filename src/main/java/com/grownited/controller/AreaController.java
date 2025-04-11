@@ -47,7 +47,7 @@ public class AreaController {
 			// ?
 			System.out.println("id ===> " + areaId);
 			Optional<AreaEntity> op = repoArea.findById(areaId);
-			if (op.isEmpty()) {
+			if (!op.isPresent()) {
 				// not found
 			} else {
 				// data found

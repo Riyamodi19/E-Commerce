@@ -131,7 +131,7 @@ public class ProductController {
 		@GetMapping("editproduct")
 		public String editProduct(Integer productId,Model model) {
 			Optional<ProductEntity> op = repoProduct.findById(productId);
-			if (op.isEmpty()) {
+			if (!op.isPresent()) {
 				return "redirect:/listproduct";
 			} else {
 				model.addAttribute("product",op.get());

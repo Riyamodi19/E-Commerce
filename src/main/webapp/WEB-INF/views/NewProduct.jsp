@@ -16,6 +16,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Modern CSS (Same as Area Form) -->
+         <jsp:include page="AdminCss.jsp"></jsp:include>
+    
     <style>
         * {
             margin: 0;
@@ -24,8 +26,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            
             height: auto;
             min-height: 100vh;
             display: flex;
@@ -41,6 +42,8 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 700px;
+            margin-top: 90px;
+            margin-bottom: 100px;
         }
 
         h2 {
@@ -74,7 +77,7 @@
         .btn-submit {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+           background: linear-gradient(135deg, #0357AF, #0180CC);  
             color: white;
             font-weight: 600;
             border: none;
@@ -83,7 +86,7 @@
         }
 
         .btn-submit:hover {
-            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+           background: linear-gradient(135deg, #024A96, #0172B8);   
         }
 
         .back-link {
@@ -106,7 +109,10 @@
 	crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background: #E5E8E9;">
+
+<jsp:include page="AdminHeader.jsp"></jsp:include>
+     <jsp:include page="AdminSidebar.jsp"></jsp:include>
 
     <div class="form-container">
         <h2>Add Product</h2>
@@ -167,7 +173,7 @@
 
         <!-- Back to Login Link -->
         <div class="back-link">
-            <a href="login">← Back to Login</a>
+            <a href="listproduct">← Back </a>
         </div>
     </div>
 

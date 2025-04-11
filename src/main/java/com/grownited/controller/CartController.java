@@ -113,7 +113,7 @@ public String deleteArea(Integer cartId) {
 @GetMapping("editcart")
 public String editCart(Integer cartId,Model model) {
 	Optional<CartEntity> op = repoCart.findById(cartId);
-	if (op.isEmpty()) {
+	if (!op.isPresent()) {
 		return "redirect:/listcart";
 	} else {
 		model.addAttribute("cart",op.get());

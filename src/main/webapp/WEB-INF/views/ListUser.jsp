@@ -54,6 +54,7 @@
                                     <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Contact Number</th>
+                                    <th>Gender</th>
                                     <th>Created At</th>
                                     <th>Actions</th>
                                 </tr>
@@ -65,12 +66,13 @@
                                         <td>${u.lastName}</td>
                                         <td>${u.email}</td>
                                         <td>${u.contactNum}</td>
+                                         <td>${u.gender}</td>
                                         <td>${u.createdAt}</td>
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <a href="viewuser?userId=${u.userId}" class="btn btn-sm btn-primary">View</a>
                                                 <a href="deleteuser?userId=${u.userId}" class="btn btn-sm btn-danger">Delete</a>
-                                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                                <a href="edituser?userId=${u.userId}" class="btn btn-sm btn-warning">Edit</a>
                                             </div>
                                         </td>
                                     </tr>

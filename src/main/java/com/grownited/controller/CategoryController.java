@@ -70,7 +70,7 @@ public class CategoryController {
    @GetMapping("editcategory")
    public String editCategory(Integer categoryId,Model model) {
    	Optional<CategoryEntity> op = repoCategory.findById(categoryId);
-   	if (op.isEmpty()) {
+   	if (!op.isPresent()) {
    		return "redirect:/listcategory";
    	} else {
    		model.addAttribute("category",op.get());
