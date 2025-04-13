@@ -86,8 +86,8 @@ public class ReviewsController {
   		}
   		//delete product
   		@GetMapping("deletereviews")
-  		public String deleteReviews(Integer reviewsId) {
-  			repoReviews.deleteById(reviewsId);//delete from members where memberID = :memberId
+  		public String deleteReviews(Integer reviewId) {
+  			repoReviews.deleteById(reviewId);//delete from members where memberID = :memberId
   			return "redirect:/listreviews";
   		}
   	//edit reviews
@@ -123,7 +123,7 @@ public class ReviewsController {
   				dbReview.setRating(reviewsEntity.getRating());//code 
   				repoReviews.save(dbReview);
   			}
-  			return "redirect:/listcity";
+  			return "redirect:/listreviews";
   		}
 
   		}

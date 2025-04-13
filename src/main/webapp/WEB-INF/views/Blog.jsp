@@ -90,6 +90,11 @@
 						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
+						<a href="#" class="flex-c-m trans-04 p-lr-25">
+							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
+							
+						</a>
+						
 					</div>
 				</nav>
 			</div>	
@@ -115,6 +120,11 @@
 				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
 					<i class="zmdi zmdi-favorite-outline"></i>
 				</a>
+				<a href="#" class="flex-c-m trans-04 p-lr-25">
+							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
+							
+						</a>
+						
 			</div>
 
 			<!-- Button show menu -->

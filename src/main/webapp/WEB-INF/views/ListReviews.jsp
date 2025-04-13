@@ -58,8 +58,8 @@
                                         <td>${r[6]}</td>
 									    <td>${r[7]}</td>
 									    <td>${r[8]}</td>
-										<td>${r[3]}</td>
 										<td>${r[4]}</td>
+										<td>${r[3]}</td>
 
                                         <td>
                                             <div class="d-flex gap-2">

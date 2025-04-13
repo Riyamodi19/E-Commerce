@@ -13,18 +13,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
+     <jsp:include page="AdminCss.jsp"></jsp:include>
     <style>
         body {
             background-color: #f8f9fa;
         }
         .container {
             max-width: 600px;
+            margin-top: 90px;
+            margin-bottom: 100px;
         }
         .card {
             border-radius: 10px;
             background: #fff;
             padding: 20px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 90px;
+            margin-bottom: 100px;
         }
         .form-label {
             font-weight: bold;
@@ -33,7 +38,7 @@
         .btn-submit {
             width: 40%;
             padding: 10px;
-            background: #007bff;
+            background: linear-gradient(135deg, #0357AF, #0180CC);            
             color: white;
             font-weight: bold;
             border: none;
@@ -41,7 +46,7 @@
             transition: background 0.3s ease;
         }
         .btn-submit:hover {
-            background: #0056b3;
+         background: linear-gradient(135deg, #024A96, #0172B8);       
             color: #e6e6fa;
         }
         .back-link {
@@ -58,10 +63,14 @@
             text-decoration: underline;
             color: #8b008b;
         }
+        
     </style>
 </head>
 
 <body style="background: #D6DFE9;">
+
+ <jsp:include page="AdminHeader.jsp"></jsp:include>
+     <jsp:include page="AdminSidebar.jsp"></jsp:include>
 
 <div class="container mt-5">
     <div class="card shadow-lg">
