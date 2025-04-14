@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -198,58 +199,28 @@
 			
 			<div class="header-cart-content flex-w js-pscroll">
 				<ul class="header-cart-wrapitem w-full">
+				<c:forEach items = "${products}" var = "p">
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
-							<img src="ashion/images/item-cart-01.jpg" alt="IMG">
+							<img src="${p[7]}" alt="IMG">
 						</div>
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
+								${p[10]}
 							</a>
 
 							<span class="header-cart-item-info">
-								1 x $19.00
+								${p[1]}
 							</span>
 						</div>
 					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="ashion/images/item-cart-02.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-03.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-						</div>
-					</li>
+					</c:forEach>
 				</ul>
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
+						Total: ${p[11] * p[1]}
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
@@ -265,7 +236,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!-- breadcrumb -->
 	<div class="container">
@@ -285,7 +255,6 @@
 	<!-- Shoping Cart -->
 	<form class="bg0 p-t-75 p-b-85">
 		<div class="container">
-		<c:foreach var = "product" items="${products}">
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
@@ -298,15 +267,16 @@
 									<th class="column-4">Quantity</th>
 									<th class="column-5">Total</th>
 								</tr>
-
+								<c:forEach items= "${products}" var = "p">
 								<tr class="table_row">
 									<td class="column-1">
 										<div class="how-itemcart1">
-											<img src="ashion/images/item-cart-04.jpg" alt="IMG">
+											<img src="${p[2]}" alt="IMG">
 										</div>
 									</td>
-									<td class="column-2">Fresh Strawberries</td>
-									<td class="column-3">$ 36.00</td>
+									<td class="column-2">${p[10]}</td>
+									<td class="column-2">${p[1]}</td>
+									
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -320,32 +290,9 @@
 											</div>
 										</div>
 									</td>
-									<td class="column-5">$ 36.00</td>
+									<td class="column-5">${p[1]}</td>
 								</tr>
-
-								<tr class="table_row">
-									<td class="column-1">
-										<div class="how-itemcart1">
-											<img src="ashion/images/item-cart-05.jpg" alt="IMG">
-										</div>
-									</td>
-									<td class="column-2">Lightweight Jacket</td>
-									<td class="column-3">$ 16.00</td>
-									<td class="column-4">
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-									</td>
-									<td class="column-5">$ 16.00</td>
-								</tr>
+								</c:forEach>
 							</table>
 						</div>
 
@@ -438,23 +385,21 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									$79.65
+									${p[0][11]}
 								</span>
 							</div>
 						</div>
-
+						
+						
 						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							<a href = "checkout">Proceed to Checkout</a>
+							<a href="checkout">Proceed to Checkout</a>
 						</button>
 					</div>
 				</div>
 			</div>
-			</c:foreach>
+
 		</div>
 	</form>
-		
-	
-		
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">

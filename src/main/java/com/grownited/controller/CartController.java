@@ -47,7 +47,8 @@ public class CartController {
 		CartEntity cart = new CartEntity();
 		cart.setProductId(productId);
 		cart.setUserId(user.getUserId());
-		
+		System.out.println(cart.getProductId());
+		System.out.println(cart.getUserId());
 		repoCart.save(cart);
 		
 	    return "redirect:/shopingcart";
@@ -57,6 +58,7 @@ public class CartController {
 	public String shopingCart(HttpSession session,Model model) {
    UserEntity user = (UserEntity) session.getAttribute("user");
    List<Object[]> products = repoCart.getAllProductsFromCart(user.getUserId());
+   System.out.println(products);
    model.addAttribute("products",products);
 	return "ShopingCart";
 }

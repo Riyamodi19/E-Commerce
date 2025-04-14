@@ -37,6 +37,8 @@
 	<link rel="stylesheet" type="text/css" href="ashion/css/util.css">
 	<link rel="stylesheet" type="text/css" href="ashion/css/main.css">
 <!--===============================================================================================-->
+ <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
 </head>
 <body class="animsition">
 	
@@ -90,17 +92,26 @@
 						</div>
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<!-- <a href ="shopingcart"> </a>--><i class="zmdi zmdi-shopping-cart"></i>
+							 <a href ="shopingcart"> <i class="zmdi zmdi-shopping-cart"></i></a>
 						</div>
 
 						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="${totalWishlist}">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 						
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
-							
-						</a>
+						
+					  <div class="dropdown p-3">
+					    <a href="#" class="flex-c-m trans-04 p-lr-25 dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+					      <img src="${user.profilePicPath}" height="40px" width="40px" alt="Profile" class="rounded-circle me-2">
+					      ${user.firstName}
+					    </a>
+					    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+					      <li><a class="dropdown-item" href="userprofile">My Profile</a></li>
+					      <!--  <li><a class="dropdown-item" href="/change-password">Change Password</a></li>-->
+					      <li><hr class="dropdown-divider"></li>
+					      <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
+					    </ul>
+					  </div>
 						
 						
 						
@@ -1099,6 +1110,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="ashion/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>

@@ -320,7 +320,7 @@
 									</div>
                                      <!-- Add to cart -->
 									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                         Add to cart
+                                      <a href="addtocart?productId=${products[0][0]}" style="color:white;">   Add to cart</a>
 										
 									</button>
 								</div>
@@ -811,7 +811,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 
 										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                          <a href="addtocart?productId=${product.productId}">Add to cart</a>
+                                         <a href="addtocart?productId=${products[0][0]}" style="color:white;">Add to cart</a>
 										</button>
 									</div>
 								</div>	
