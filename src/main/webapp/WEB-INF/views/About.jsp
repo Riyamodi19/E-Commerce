@@ -81,17 +81,26 @@
 						</div>
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
+							 <a href ="shopingcart"> <i class="zmdi zmdi-shopping-cart"></i></a>
 						</div>
 
 						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
-							
-						</a>
 						
+						 <div class="dropdown p-3">
+					    <a href="#" class="flex-c-m trans-04 p-lr-25 dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+					      <img src="${user.profilePicPath}" height="40px" width="40px" alt="Profile" class="rounded-circle me-2">
+					      ${user.firstName}
+					    </a>
+					    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+					      <li><a class="dropdown-item" href="userprofile">My Profile</a></li>
+					      <!--  <li><a class="dropdown-item" href="/change-password">Change Password</a></li>-->
+					      <li><hr class="dropdown-divider"></li>
+					      <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
+					    </ul>
+					  </div>
+		
 					</div>
 				</nav>
 			</div>	
@@ -285,15 +294,13 @@
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
-						</p>
+                        In a small college lab filled with coffee cups and whiteboard scribbles, a group of passionate developers noticed a simple but frustrating problem — shopping online often felt like a chore. Endless scrolling, cluttered product pages, complicated checkouts, and limited options made online shopping far less enjoyable than it should be. One of the team members, Riya, shared how her mom tried to buy a watch online but gave up because the site kept crashing during checkout. Another, Sameer, said he couldn't even find the size chart for a shirt he liked on a different site. That’s when the team realized: there had to be a better way. And so, ShopSmart was born — an e-commerce platform with a mission to make shopping simple, smart, and stylish. The idea was clear: build a user-friendly website where anyone — from tech-savvy youth to busy parents — could shop for clothing, belts, watches, and more without confusion or frustration. The team divided the work, with designers crafting clean interfaces, developers building smooth flows, and testers ensuring every button worked just right. They started by building categories for men and women, showcasing detailed product descriptions for shirts, jeans, sarees, belts, and watches. Each product had vibrant images, clear sizing, and visible pricing — no hidden surprises.						</p>
 
 						<p class="stext-113 cl6 p-b-26">
-							Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula. 
-						</p>
+                      At MRSHAshion, our journey began with a simple idea — to make online fashion shopping easier, smarter, and more personalized. We saw how traditional platforms often lacked flexibility, style diversity, and real-time support, especially for everyday users looking for a reliable and enjoyable shopping experience. That’s when we decided to build something better — a platform that not only offers a wide range of clothing, accessories, and cosmetics but also understands your style and preferences. From smart filters to personalized suggestions, MRSHAshion was created with you in mind, to turn everyday browsing into a delightful fashion discovery.						</p>
 
 						<p class="stext-113 cl6 p-b-26">
-							Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+							Any questions?then contact us on +91 89802 03139
 						</p>
 					</div>
 				</div>
@@ -315,9 +322,7 @@
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
-						</p>
-
+                         At MRSHAshion, our mission is to make online shopping simple, enjoyable, and personalized just for you. We aim to bring you a smooth and secure shopping experience where you can easily find what you love — from trendy outfits to must-have accessories. With features like smart search, wishlists, real-time order tracking, and upcoming AI recommendations, we’re focused on giving you more than just products — we’re here to make shopping easier, faster, and tailored to your style. Your convenience and satisfaction are at the heart of everything we build.
 						<div class="bor16 p-l-29 p-b-9 m-t-22">
 							<p class="stext-114 cl6 p-r-40 p-b-11">
 								Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
@@ -417,7 +422,7 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Any questions? Let us know at MRSHAshion Store or Contact us on +91 89802 03139
 					</p>
 
 					<div class="p-t-27">
@@ -442,7 +447,7 @@
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="admin@yopmail.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
@@ -534,6 +539,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="ashion/js/main.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	
 </body>
 </html>

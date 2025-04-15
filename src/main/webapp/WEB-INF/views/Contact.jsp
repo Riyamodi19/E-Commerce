@@ -82,16 +82,26 @@
 						</div>
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
+							 <a href ="shopingcart"> <i class="zmdi zmdi-shopping-cart"></i></a>
 						</div>
 
 						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
-							
-						</a>
+						
+						 <div class="dropdown p-3">
+					    <a href="#" class="flex-c-m trans-04 p-lr-25 dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+					      <img src="${user.profilePicPath}" height="40px" width="40px" alt="Profile" class="rounded-circle me-2">
+					      ${user.firstName}
+					    </a>
+					    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+					      <li><a class="dropdown-item" href="userprofile">My Profile</a></li>
+					      <!--  <li><a class="dropdown-item" href="/change-password">Change Password</a></li>-->
+					      <li><hr class="dropdown-divider"></li>
+					      <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
+					    </ul>
+					  </div>
+		
 						
 					</div>
 				</nav>
@@ -118,10 +128,20 @@
 				<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
 					<i class="zmdi zmdi-favorite-outline"></i>
 				</a>
-				<a href="#" class="flex-c-m trans-04 p-lr-25">
-				<img src="${user.profilePicPath}"  height="40px" width="40px" alt="Profile" class="rounded-circle" ><br>${user.firstName}
-							
-			</a>
+				
+				 <div class="dropdown p-3">
+					    <a href="#" class="flex-c-m trans-04 p-lr-25 dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+					      <img src="${user.profilePicPath}" height="40px" width="40px" alt="Profile" class="rounded-circle me-2">
+					      ${user.firstName}
+					    </a>
+					    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+					      <li><a class="dropdown-item" href="userprofile">My Profile</a></li>
+					      <!--  <li><a class="dropdown-item" href="/change-password">Change Password</a></li>-->
+					      <li><hr class="dropdown-divider"></li>
+					      <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
+					    </ul>
+					  </div>
+		
 			</div>
 
 			<!-- Button show menu -->
@@ -280,7 +300,7 @@
 		<div class="container">
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form>
+					<form action="savecontact" method="post">
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
 							Send Us A Message
 						</h4>
@@ -312,7 +332,7 @@
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								MRSH Ashion Store
+								<a href = "home">MRSH Ashion Store</a>
 							</p>
 						</div>
 					</div>
@@ -435,7 +455,7 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Any questions? Let us know at MRSHAshion Store or Contact us on +91 89802 03139
 					</p>
 
 					<div class="p-t-27">
@@ -460,7 +480,7 @@
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="admin@yopmail.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
@@ -555,6 +575,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="ashion/js/map-custom.js"></script>
 <!--===============================================================================================-->
 	<script src="ashion/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -112,9 +112,7 @@
 					      <li><a class="dropdown-item" href="/logout">Sign Out</a></li>
 					    </ul>
 					  </div>
-						
-						
-						
+		
 					</div>
 				</nav>
 			</div>	
@@ -915,7 +913,7 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Any questions? Let us know at MRSHAshion Store or Contact us on +91 89802 03139
 					</p>
 
 					<div class="p-t-27">
@@ -940,7 +938,7 @@
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="admin@yopmail.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
