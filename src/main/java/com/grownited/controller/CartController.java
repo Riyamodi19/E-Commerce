@@ -15,6 +15,7 @@ import com.grownited.entity.UserEntity;
 import com.grownited.repository.CartRepository;
 import com.grownited.repository.ProductRepository;
 import com.grownited.repository.UserRepository;
+import com.grownited.repository.WishlistRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -28,6 +29,9 @@ public class CartController {
      
      @Autowired
  	 UserRepository repoUser;
+     
+     @Autowired
+  	WishlistRepository wishlistRepository; 
 	
  @GetMapping("newcart")
  public String newCart(Model model) {
@@ -59,9 +63,25 @@ public class CartController {
    UserEntity user = (UserEntity) session.getAttribute("user");
    List<Object[]> products = repoCart.getAllProductsFromCart(user.getUserId());
    System.out.println(products);
-   model.addAttribute("products",products);
+   double total = 0;
+    for (Object[] row : products) {
+        double price = Double.parseDouble(row[1].toString());
+        int quantity = Integer.parseInt(row[3].toString()); // total_quantity
+        total += price * quantity;
+    }
+    
+    
+    
+	Integer totalWishlist  = wishlistRepository.findByUserId(user.getUserId()).size();
+	model.addAttribute("totalWishlist",totalWishlist);
+    model.addAttribute("amount", total);
+	model.addAttribute("products",products);
+	
+	Integer totalCart = repoCart.findByUserId(user.getUserId()).size();
+	model.addAttribute("totalCart", totalCart);
+	
 	return "ShopingCart";
-}
+} 
  
 @PostMapping("savecart")
 public String saveCart(CartEntity cartEntity, HttpSession session) {

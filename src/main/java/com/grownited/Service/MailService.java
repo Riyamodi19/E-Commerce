@@ -44,5 +44,28 @@ public class MailService {
 		mailSender.send(message);
 
 	}
+	public void sendPaymentStatusMail(String email, String firstName, Double amount, String last4Digits) {
+		 
+			String subject = "MRSH Ashion Payment Confirmation";
+
+		    String body = "Hey " + firstName
+		            + ",\n\nYour payment of ₹" + amount + " was successfully processed."
+		            + "\nCard Ending With: **** **** **** " + last4Digits
+		            + "\n\nThank you for booking your Order with MRSH Ashion!"
+		            + "\n\nWe’re here to help if you need any further assistance."
+		            + "\n\n\nBest regards,\nMRSH ashoin Team";
+
+		    String from = "rmodi6128@gmail.com";
+
+		    SimpleMailMessage message = new SimpleMailMessage();
+
+		    message.setFrom(from);  // This line should be setFrom, not setText
+		    message.setTo(email);
+		    message.setSubject(subject);
+		    message.setText(body);
+
+		    mailSender.send(message);
+			
+		}
 
 }

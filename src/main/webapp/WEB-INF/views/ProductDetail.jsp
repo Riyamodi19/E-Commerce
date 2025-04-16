@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,11 +86,11 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="${totalCart}">
 							 <a href ="shopingcart"> <i class="zmdi zmdi-shopping-cart"></i></a>
 						</div>
 
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="${totalWishlist }">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 						 <div class="dropdown p-3">
@@ -328,10 +328,10 @@
 										</div>
 									</div>   -->
                                      <!-- Add to cart -->
+                                     <a href="addtocart?productId=${products[0][0]}">
 									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                      <a href="addtocart?productId=${products[0][0]}" style="color:white;">   Add to cart</a>
-										
-									</button>
+                                         Add to cart
+									</button></a>
 								</div>
 							</div>	
 						</div>
@@ -747,9 +747,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 											</div>
 										</div>
                                         -->
+                                         <a href="addtocart?productId=${products[0][0]}" >
 										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                         <a href="addtocart?productId=${products[0][0]}" style="color:white;">Add to cart</a>
-										</button>
+                                       Add to cart
+										</button></a>
 									</div>
 								</div>	
 							</div>
