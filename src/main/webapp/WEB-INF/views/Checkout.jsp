@@ -128,7 +128,7 @@
 
         <label>Expiration Date</label>
         <input type="text" name="expDate" size="4" placeholder="MMYY"/>
-
+        <input type="hidden" name="amount" value="${amount}" />
         <input type="submit" class="btn btn-submit hover" value="Pay"/>
     </form>
 </div>

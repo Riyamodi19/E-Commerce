@@ -84,14 +84,14 @@
 							 <a href ="shopingcart"> <i class="zmdi zmdi-shopping-cart"></i></a>
 						</div>
 
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="${totalWishlist}">
+						<a href="wishlist" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="${totalWishlist}">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 						
 						 <div class="dropdown p-3">
 					    <a href="#" class="flex-c-m trans-04 p-lr-25 dropdown-toggle d-flex align-items-center" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
 					      <img src="${user.profilePicPath}" height="40px" width="40px" alt="Profile" class="rounded-circle me-2">
-					      ${user.firstName}
+					     <h5 style="margin-left:7px; margin-top:6px; color:#8B008B;">${user.firstName}</h5>
 					    </a>
 					    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
 					      <li><a class="dropdown-item" href="userprofile">My Profile</a></li>
