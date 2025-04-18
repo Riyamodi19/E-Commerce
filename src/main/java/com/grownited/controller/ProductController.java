@@ -1,7 +1,7 @@
 package com.grownited.controller;
 
 import java.io.IOException;
-
+import java.time.LocalDate;
 import java.util.Date;
 
 import java.util.List;
@@ -83,7 +83,8 @@ public class ProductController {
 		System.out.println(productEntity.getProductImageURL2());
 		System.out.println(productEntity.getProductImageURL3());
 		System.out.println(productEntity.getQuantity());
-    	productEntity.setCreatedAt(new Date());
+		LocalDate todaydate=LocalDate.now();
+    	productEntity.setCreatedAt(todaydate);
 		  repoProduct.save(productEntity);
 		  return "redirect:/listproduct";
 	}

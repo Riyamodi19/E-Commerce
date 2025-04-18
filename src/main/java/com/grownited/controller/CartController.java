@@ -67,7 +67,7 @@ public class CartController {
     for (Object[] row : products) {
         double price = Double.parseDouble(row[1].toString());
         int quantity = Integer.parseInt(row[3].toString()); // total_quantity
-        total += price * quantity;
+        total += price;
     }
     
     

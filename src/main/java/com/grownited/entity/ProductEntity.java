@@ -1,11 +1,15 @@
 package com.grownited.entity;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,7 +29,19 @@ public class ProductEntity {
 	private String productImageURL2;	
 	private String productImageURL3;
 	private int quantity;
-	private Date createdAt;
+	private LocalDate createdAt;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "categoryId", insertable = false, updatable = false)
+	private CategoryEntity category;
+
+	
+	public CategoryEntity getCategory() {
+		return category;
+	}
+	public void setCategory(CategoryEntity category) {
+		this.category = category;
+	}
 	
 	public Integer getProductId() {
 		return productId;
@@ -104,12 +120,12 @@ public class ProductEntity {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public Date getCreatedAt() {
+	public LocalDate getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(LocalDate createdAt) {
 		this.createdAt = createdAt;
-	}	
+	}
 	
 
 }

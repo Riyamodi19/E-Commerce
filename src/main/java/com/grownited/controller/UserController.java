@@ -43,12 +43,19 @@ public class UserController {
 		return "Home";
 	}
 	@GetMapping("product")
-public String product(Integer productId, Model model,HttpSession session) {
+public String product(Integer categoryId,Integer productId, Model model,HttpSession session) {
  		
  		UserEntity user = (UserEntity) session.getAttribute("user");
  	    Integer userId = user.getUserId(); 
  		
- 	    List<ProductEntity> allProduct = repoProduct.findAll();// all state
+ 	    List<ProductEntity> allProduct = null;// all state
+ 	    
+ 	   if (categoryId == null) {
+		  	allProduct = repoProduct.findAll();
+		} else {
+			allProduct = repoProduct.findByCategoryId(categoryId);// all state
+		}
+ 	   
  		model.addAttribute("allProduct",allProduct);
  		List<Object[]> op = repoProduct.getByProductId(productId);
  		
@@ -63,8 +70,9 @@ public String product(Integer productId, Model model,HttpSession session) {
 	}
 	
 	@GetMapping("productdetail")
-	public String productdetail(Model model , Integer productId,HttpSession session) {
+	public String productdetail( Model model , Integer productId,HttpSession session) {
  		UserEntity user  = (UserEntity)session.getAttribute("user");
+ 		
 		List<Object[]> products = repoProduct.getByProductId(productId);;
 		model.addAttribute("products",products);
 		Integer totalWishlist  = wishlistRepository.findByUserId(user.getUserId()).size();
@@ -119,4 +127,27 @@ public String product(Integer productId, Model model,HttpSession session) {
  		model.addAttribute("totalCart", totalCart);
 		return "BlogDetail";
 	}
+	
+	@GetMapping("wishlist")
+	public String wishlist(Integer productId, Model model, HttpSession session) {
+	    UserEntity user = (UserEntity) session.getAttribute("user");
+	    if (user == null) return "redirect:/login";
+
+	    Integer userId = user.getUserId(); 
+
+	    // Total count values for header
+	    model.addAttribute("totalWishlist", wishlistRepository.findByUserId(userId).size());
+	    model.addAttribute("totalCart", repocart.findByUserId(userId).size());
+
+	    // Add all products (if needed elsewhere)
+	    List<ProductEntity> allProduct = repoProduct.findAll();
+	    model.addAttribute("allProduct", allProduct);
+
+	    // ✅ Fetch actual wishlist products
+	    List<ProductEntity> wishlistProducts = repoProduct.findWishlistProductsByUserId(userId); // You need this method
+	    model.addAttribute("wishlistProducts", wishlistProducts); // <-- Use this in your JSP
+
+	    return "Wishlist";
+	}
+
 }
