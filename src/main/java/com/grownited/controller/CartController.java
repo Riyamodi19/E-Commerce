@@ -124,9 +124,9 @@ public String viewCart(Integer cartId, Model model) {
 	model.addAttribute("cart", op);
 	return "ViewCart";
 }
-//deletecart
+//delete cart
 @GetMapping("deletecart")
-public String deleteArea(Integer cartId) {
+public String deleteCart(Integer cartId) {
 	repoCart.deleteById(cartId);//delete from members where memberID = :memberId
 	return "redirect:/listcart";
 }
@@ -163,6 +163,11 @@ public String updateCart(CartEntity cartEntity) {//pcode vhreg type vid
 		repoCart.save(dbCart);
 	}
 	return "redirect:/listcart";
+}
+@GetMapping("removecart")
+public String removeCart(Integer cartId) {
+	repoCart.deleteById(cartId);
+	return "redirect:/shopingcart";
 }
 
 }

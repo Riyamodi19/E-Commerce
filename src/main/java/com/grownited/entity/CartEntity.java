@@ -15,6 +15,7 @@ public class CartEntity {
 	private Integer userId;
 	private Integer productId;
 	private int quantity;
+	
 	public Integer getCartId() {
 		return cartId;
 	}

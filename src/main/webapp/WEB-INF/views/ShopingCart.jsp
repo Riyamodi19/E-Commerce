@@ -220,7 +220,7 @@
 									<th class="column-1">Product</th>
 									<th class="column-2"></th>
 									<th class="column-3">Price</th>
-									<th class="column-4">Quantity</th>
+									<th class="column-4"></th>
 									<th class="column-5">Total</th>
 								</tr>
 								<c:forEach items= "${products}" var = "p">
@@ -232,19 +232,15 @@
 									</td>
 									<td class="column-2">${p[0]}</td>
 									<td class="column-3">${p[1]}</td>
-									
 									<td class="column-4">
-										<div class="wrap-num-product flex-w m-l-auto m-r-0">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
+					              <c:forEach items= "${cartId}" var = "c">
+											<!-- Delete button -->
+										   <div class="btn-delete-product flex-c-m">
+										        <a href="removecart?cartId=${c[0]}">
+											    <i class="fs-16 zmdi zmdi-delete m-r-5 btn btn-sm btn-danger"></i>Delete
+											    </a>
+											</div>	
+											</c:forEach>
 									</td>
 									<td class="column-5">${p[1]}</td>
 								</tr>

@@ -30,7 +30,8 @@
 
         body {
             
-            height: 100vh;
+            height: auto;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +44,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;
             margin-top: 90px;
             margin-bottom: 100px;
         }
@@ -75,6 +76,7 @@
             border-color: #007bff;
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
+
 
         .btn-submit {
             width: 100%;
@@ -217,7 +219,6 @@
 
 </script> 
 
-</script> 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

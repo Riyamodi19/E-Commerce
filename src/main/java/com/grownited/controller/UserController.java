@@ -80,6 +80,7 @@ public String product(Integer categoryId,Integer productId, Model model,HttpSess
  		
  		Integer totalCart = repocart.findByUserId(user.getUserId()).size();
  		model.addAttribute("totalCart", totalCart);
+ 		
 		return "ProductDetail";
 	}
 	@GetMapping("blog")
